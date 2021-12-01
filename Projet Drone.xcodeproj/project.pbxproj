@@ -13,7 +13,78 @@
 		A5035FC127578B45007E379D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5035FBF27578B45007E379D /* Main.storyboard */; };
 		A5035FC327578B48007E379D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5035FC227578B48007E379D /* Assets.xcassets */; };
 		A5035FC627578B48007E379D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5035FC427578B48007E379D /* LaunchScreen.storyboard */; };
+		A5035FF227578CAA007E379D /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5035FEE27578C53007E379D /* Starscream.framework */; };
+		A5035FF327578CAA007E379D /* Starscream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5035FEE27578C53007E379D /* Starscream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5097A552757A14700CE7DB5 /* SpheroToyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A542757A14700CE7DB5 /* SpheroToyBox.swift */; };
+		A5097A582757A18000CE7DB5 /* SDKUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A572757A18000CE7DB5 /* SDKUtils.swift */; };
+		A5097A5C2757A1A300CE7DB5 /* Color+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A592757A1A300CE7DB5 /* Color+Utils.swift */; };
+		A5097A5D2757A1A300CE7DB5 /* Double+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A5A2757A1A300CE7DB5 /* Double+Utils.swift */; };
+		A5097A5E2757A1A300CE7DB5 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A5B2757A1A300CE7DB5 /* String+Utils.swift */; };
+		A5097A752757A1D000CE7DB5 /* Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A612757A1CF00CE7DB5 /* Toy.swift */; };
+		A5097A762757A1D000CE7DB5 /* SensorControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A622757A1CF00CE7DB5 /* SensorControl.swift */; };
+		A5097A772757A1D000CE7DB5 /* SPRKToy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A642757A1CF00CE7DB5 /* SPRKToy.swift */; };
+		A5097A782757A1D000CE7DB5 /* SensorControlV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A652757A1CF00CE7DB5 /* SensorControlV1.swift */; };
+		A5097A792757A1D000CE7DB5 /* SpheroV1Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A662757A1CF00CE7DB5 /* SpheroV1Toy.swift */; };
+		A5097A7A2757A1D000CE7DB5 /* SpheroV1ToyCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A672757A1CF00CE7DB5 /* SpheroV1ToyCore.swift */; };
+		A5097A7B2757A1D000CE7DB5 /* BB8Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A682757A1CF00CE7DB5 /* BB8Toy.swift */; };
+		A5097A7C2757A1D000CE7DB5 /* SensorControlV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A6A2757A1CF00CE7DB5 /* SensorControlV2.swift */; };
+		A5097A7D2757A1D000CE7DB5 /* BB9EToy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A6B2757A1CF00CE7DB5 /* BB9EToy.swift */; };
+		A5097A7E2757A1D000CE7DB5 /* SpheroV2Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A6C2757A1CF00CE7DB5 /* SpheroV2Toy.swift */; };
+		A5097A7F2757A1D000CE7DB5 /* BoltToy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A6D2757A1CF00CE7DB5 /* BoltToy.swift */; };
+		A5097A802757A1D000CE7DB5 /* R2D2Toy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A6E2757A1CF00CE7DB5 /* R2D2Toy.swift */; };
+		A5097A812757A1D000CE7DB5 /* SpheroV2ToyCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A6F2757A1CF00CE7DB5 /* SpheroV2ToyCore.swift */; };
+		A5097A822757A1D000CE7DB5 /* MiniToy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A702757A1CF00CE7DB5 /* MiniToy.swift */; };
+		A5097A832757A1D000CE7DB5 /* ToyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A712757A1CF00CE7DB5 /* ToyProtocols.swift */; };
+		A5097A842757A1D000CE7DB5 /* CBUUID+SpheroUUIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A722757A1D000CE7DB5 /* CBUUID+SpheroUUIDs.swift */; };
+		A5097A852757A1D000CE7DB5 /* ToyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A742757A1D000CE7DB5 /* ToyBox.swift */; };
+		A5097A982757A20C00CE7DB5 /* SensorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A872757A20C00CE7DB5 /* SensorUtils.swift */; };
+		A5097A992757A20C00CE7DB5 /* CommandOperationV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A892757A20C00CE7DB5 /* CommandOperationV2.swift */; };
+		A5097A9A2757A20C00CE7DB5 /* CommandSequencerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A8A2757A20C00CE7DB5 /* CommandSequencerV2.swift */; };
+		A5097A9B2757A20C00CE7DB5 /* CommandV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A8B2757A20C00CE7DB5 /* CommandV2.swift */; };
+		A5097A9C2757A20C00CE7DB5 /* VersionsCommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A8D2757A20C00CE7DB5 /* VersionsCommandResponse.swift */; };
+		A5097A9D2757A20C00CE7DB5 /* ShouldActionCompleteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A8E2757A20C00CE7DB5 /* ShouldActionCompleteResponse.swift */; };
+		A5097A9E2757A20C00CE7DB5 /* SensorCommandResponseV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A8F2757A20C00CE7DB5 /* SensorCommandResponseV2.swift */; };
+		A5097A9F2757A20C00CE7DB5 /* SensorCommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A902757A20C00CE7DB5 /* SensorCommandResponse.swift */; };
+		A5097AA02757A20C00CE7DB5 /* SensorMaskCommandResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A912757A20C00CE7DB5 /* SensorMaskCommandResponse.swift */; };
+		A5097AA12757A20C00CE7DB5 /* PowerStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A922757A20C00CE7DB5 /* PowerStateResponse.swift */; };
+		A5097AA22757A20C00CE7DB5 /* CollisionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A932757A20C00CE7DB5 /* CollisionData.swift */; };
+		A5097AA32757A20C00CE7DB5 /* CommandV1Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A952757A20C00CE7DB5 /* CommandV1Operation.swift */; };
+		A5097AA42757A20C00CE7DB5 /* CommandV1Sequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A962757A20C00CE7DB5 /* CommandV1Sequencer.swift */; };
+		A5097AA52757A20C00CE7DB5 /* CommandV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A972757A20C00CE7DB5 /* CommandV1.swift */; };
+		A5097AA72757A33400CE7DB5 /* WebSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097AA62757A33400CE7DB5 /* WebSocketManager.swift */; };
+		A5097AA92757A3EA00CE7DB5 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097AA82757A3EA00CE7DB5 /* ConnectionViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5035FED27578C53007E379D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5035FE827578C53007E379D /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 33CCF0921F5DDC030099B092;
+			remoteInfo = Starscream;
+		};
+		A5035FEF27578C53007E379D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5035FE827578C53007E379D /* Starscream.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 335FA2021F5DF71D00F6D2EC;
+			remoteInfo = "Starscream Tests";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A5035FF427578CAA007E379D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5035FF327578CAA007E379D /* Starscream.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A5035FB627578B45007E379D /* Projet Drone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Projet Drone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +95,45 @@
 		A5035FC227578B48007E379D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5035FC527578B48007E379D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5035FC727578B48007E379D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5035FE827578C53007E379D /* Starscream.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Starscream.xcodeproj; path = "../../Downloads/Starscream-master 4/Starscream.xcodeproj"; sourceTree = "<group>"; };
+		A5097A542757A14700CE7DB5 /* SpheroToyBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpheroToyBox.swift; sourceTree = "<group>"; };
+		A5097A572757A18000CE7DB5 /* SDKUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDKUtils.swift; sourceTree = "<group>"; };
+		A5097A592757A1A300CE7DB5 /* Color+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Utils.swift"; sourceTree = "<group>"; };
+		A5097A5A2757A1A300CE7DB5 /* Double+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Utils.swift"; sourceTree = "<group>"; };
+		A5097A5B2757A1A300CE7DB5 /* String+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		A5097A612757A1CF00CE7DB5 /* Toy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toy.swift; sourceTree = "<group>"; };
+		A5097A622757A1CF00CE7DB5 /* SensorControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorControl.swift; sourceTree = "<group>"; };
+		A5097A642757A1CF00CE7DB5 /* SPRKToy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPRKToy.swift; sourceTree = "<group>"; };
+		A5097A652757A1CF00CE7DB5 /* SensorControlV1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorControlV1.swift; sourceTree = "<group>"; };
+		A5097A662757A1CF00CE7DB5 /* SpheroV1Toy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpheroV1Toy.swift; sourceTree = "<group>"; };
+		A5097A672757A1CF00CE7DB5 /* SpheroV1ToyCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpheroV1ToyCore.swift; sourceTree = "<group>"; };
+		A5097A682757A1CF00CE7DB5 /* BB8Toy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BB8Toy.swift; sourceTree = "<group>"; };
+		A5097A6A2757A1CF00CE7DB5 /* SensorControlV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorControlV2.swift; sourceTree = "<group>"; };
+		A5097A6B2757A1CF00CE7DB5 /* BB9EToy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BB9EToy.swift; sourceTree = "<group>"; };
+		A5097A6C2757A1CF00CE7DB5 /* SpheroV2Toy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpheroV2Toy.swift; sourceTree = "<group>"; };
+		A5097A6D2757A1CF00CE7DB5 /* BoltToy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoltToy.swift; sourceTree = "<group>"; };
+		A5097A6E2757A1CF00CE7DB5 /* R2D2Toy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R2D2Toy.swift; sourceTree = "<group>"; };
+		A5097A6F2757A1CF00CE7DB5 /* SpheroV2ToyCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpheroV2ToyCore.swift; sourceTree = "<group>"; };
+		A5097A702757A1CF00CE7DB5 /* MiniToy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniToy.swift; sourceTree = "<group>"; };
+		A5097A712757A1CF00CE7DB5 /* ToyProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyProtocols.swift; sourceTree = "<group>"; };
+		A5097A722757A1D000CE7DB5 /* CBUUID+SpheroUUIDs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CBUUID+SpheroUUIDs.swift"; sourceTree = "<group>"; };
+		A5097A742757A1D000CE7DB5 /* ToyBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToyBox.swift; sourceTree = "<group>"; };
+		A5097A872757A20C00CE7DB5 /* SensorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorUtils.swift; sourceTree = "<group>"; };
+		A5097A892757A20C00CE7DB5 /* CommandOperationV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandOperationV2.swift; sourceTree = "<group>"; };
+		A5097A8A2757A20C00CE7DB5 /* CommandSequencerV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandSequencerV2.swift; sourceTree = "<group>"; };
+		A5097A8B2757A20C00CE7DB5 /* CommandV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandV2.swift; sourceTree = "<group>"; };
+		A5097A8D2757A20C00CE7DB5 /* VersionsCommandResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionsCommandResponse.swift; sourceTree = "<group>"; };
+		A5097A8E2757A20C00CE7DB5 /* ShouldActionCompleteResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldActionCompleteResponse.swift; sourceTree = "<group>"; };
+		A5097A8F2757A20C00CE7DB5 /* SensorCommandResponseV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorCommandResponseV2.swift; sourceTree = "<group>"; };
+		A5097A902757A20C00CE7DB5 /* SensorCommandResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorCommandResponse.swift; sourceTree = "<group>"; };
+		A5097A912757A20C00CE7DB5 /* SensorMaskCommandResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorMaskCommandResponse.swift; sourceTree = "<group>"; };
+		A5097A922757A20C00CE7DB5 /* PowerStateResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerStateResponse.swift; sourceTree = "<group>"; };
+		A5097A932757A20C00CE7DB5 /* CollisionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionData.swift; sourceTree = "<group>"; };
+		A5097A952757A20C00CE7DB5 /* CommandV1Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandV1Operation.swift; sourceTree = "<group>"; };
+		A5097A962757A20C00CE7DB5 /* CommandV1Sequencer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandV1Sequencer.swift; sourceTree = "<group>"; };
+		A5097A972757A20C00CE7DB5 /* CommandV1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandV1.swift; sourceTree = "<group>"; };
+		A5097AA62757A33400CE7DB5 /* WebSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketManager.swift; sourceTree = "<group>"; };
+		A5097AA82757A3EA00CE7DB5 /* ConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5035FF227578CAA007E379D /* Starscream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +153,8 @@
 			children = (
 				A5035FB827578B45007E379D /* Projet Drone */,
 				A5035FB727578B45007E379D /* Products */,
+				A5035FE827578C53007E379D /* Starscream.xcodeproj */,
+				A5035FF127578CAA007E379D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +169,7 @@
 		A5035FB827578B45007E379D /* Projet Drone */ = {
 			isa = PBXGroup;
 			children = (
+				A5097A532757A11700CE7DB5 /* SpheroSDK */,
 				A5035FB927578B45007E379D /* AppDelegate.swift */,
 				A5035FBB27578B45007E379D /* SceneDelegate.swift */,
 				A5035FBD27578B45007E379D /* ViewController.swift */,
@@ -63,8 +177,149 @@
 				A5035FC227578B48007E379D /* Assets.xcassets */,
 				A5035FC427578B48007E379D /* LaunchScreen.storyboard */,
 				A5035FC727578B48007E379D /* Info.plist */,
+				A5097AA62757A33400CE7DB5 /* WebSocketManager.swift */,
+				A5097AA82757A3EA00CE7DB5 /* ConnectionViewController.swift */,
 			);
 			path = "Projet Drone";
+			sourceTree = "<group>";
+		};
+		A5035FE927578C53007E379D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5035FEE27578C53007E379D /* Starscream.framework */,
+				A5035FF027578C53007E379D /* Starscream Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5035FF127578CAA007E379D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5097A532757A11700CE7DB5 /* SpheroSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A562757A16100CE7DB5 /* SDK */,
+				A5097A542757A14700CE7DB5 /* SpheroToyBox.swift */,
+			);
+			path = SpheroSDK;
+			sourceTree = "<group>";
+		};
+		A5097A562757A16100CE7DB5 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A5F2757A1CF00CE7DB5 /* BLE */,
+				A5097A862757A20C00CE7DB5 /* Commands */,
+				A5097A572757A18000CE7DB5 /* SDKUtils.swift */,
+				A5097A592757A1A300CE7DB5 /* Color+Utils.swift */,
+				A5097A5A2757A1A300CE7DB5 /* Double+Utils.swift */,
+				A5097A5B2757A1A300CE7DB5 /* String+Utils.swift */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		A5097A5F2757A1CF00CE7DB5 /* BLE */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A602757A1CF00CE7DB5 /* Toy */,
+				A5097A722757A1D000CE7DB5 /* CBUUID+SpheroUUIDs.swift */,
+				A5097A732757A1D000CE7DB5 /* ToyBox */,
+			);
+			path = BLE;
+			sourceTree = "<group>";
+		};
+		A5097A602757A1CF00CE7DB5 /* Toy */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A612757A1CF00CE7DB5 /* Toy.swift */,
+				A5097A622757A1CF00CE7DB5 /* SensorControl.swift */,
+				A5097A632757A1CF00CE7DB5 /* V1Toys */,
+				A5097A692757A1CF00CE7DB5 /* V2Toys */,
+				A5097A712757A1CF00CE7DB5 /* ToyProtocols.swift */,
+			);
+			path = Toy;
+			sourceTree = "<group>";
+		};
+		A5097A632757A1CF00CE7DB5 /* V1Toys */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A642757A1CF00CE7DB5 /* SPRKToy.swift */,
+				A5097A652757A1CF00CE7DB5 /* SensorControlV1.swift */,
+				A5097A662757A1CF00CE7DB5 /* SpheroV1Toy.swift */,
+				A5097A672757A1CF00CE7DB5 /* SpheroV1ToyCore.swift */,
+				A5097A682757A1CF00CE7DB5 /* BB8Toy.swift */,
+			);
+			path = V1Toys;
+			sourceTree = "<group>";
+		};
+		A5097A692757A1CF00CE7DB5 /* V2Toys */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A6A2757A1CF00CE7DB5 /* SensorControlV2.swift */,
+				A5097A6B2757A1CF00CE7DB5 /* BB9EToy.swift */,
+				A5097A6C2757A1CF00CE7DB5 /* SpheroV2Toy.swift */,
+				A5097A6D2757A1CF00CE7DB5 /* BoltToy.swift */,
+				A5097A6E2757A1CF00CE7DB5 /* R2D2Toy.swift */,
+				A5097A6F2757A1CF00CE7DB5 /* SpheroV2ToyCore.swift */,
+				A5097A702757A1CF00CE7DB5 /* MiniToy.swift */,
+			);
+			path = V2Toys;
+			sourceTree = "<group>";
+		};
+		A5097A732757A1D000CE7DB5 /* ToyBox */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A742757A1D000CE7DB5 /* ToyBox.swift */,
+			);
+			path = ToyBox;
+			sourceTree = "<group>";
+		};
+		A5097A862757A20C00CE7DB5 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A872757A20C00CE7DB5 /* SensorUtils.swift */,
+				A5097A882757A20C00CE7DB5 /* CommandV2 */,
+				A5097A8C2757A20C00CE7DB5 /* CommandResponses */,
+				A5097A942757A20C00CE7DB5 /* CommandV1 */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		A5097A882757A20C00CE7DB5 /* CommandV2 */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A892757A20C00CE7DB5 /* CommandOperationV2.swift */,
+				A5097A8A2757A20C00CE7DB5 /* CommandSequencerV2.swift */,
+				A5097A8B2757A20C00CE7DB5 /* CommandV2.swift */,
+			);
+			path = CommandV2;
+			sourceTree = "<group>";
+		};
+		A5097A8C2757A20C00CE7DB5 /* CommandResponses */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A8D2757A20C00CE7DB5 /* VersionsCommandResponse.swift */,
+				A5097A8E2757A20C00CE7DB5 /* ShouldActionCompleteResponse.swift */,
+				A5097A8F2757A20C00CE7DB5 /* SensorCommandResponseV2.swift */,
+				A5097A902757A20C00CE7DB5 /* SensorCommandResponse.swift */,
+				A5097A912757A20C00CE7DB5 /* SensorMaskCommandResponse.swift */,
+				A5097A922757A20C00CE7DB5 /* PowerStateResponse.swift */,
+				A5097A932757A20C00CE7DB5 /* CollisionData.swift */,
+			);
+			path = CommandResponses;
+			sourceTree = "<group>";
+		};
+		A5097A942757A20C00CE7DB5 /* CommandV1 */ = {
+			isa = PBXGroup;
+			children = (
+				A5097A952757A20C00CE7DB5 /* CommandV1Operation.swift */,
+				A5097A962757A20C00CE7DB5 /* CommandV1Sequencer.swift */,
+				A5097A972757A20C00CE7DB5 /* CommandV1.swift */,
+			);
+			path = CommandV1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,6 +332,7 @@
 				A5035FB227578B45007E379D /* Sources */,
 				A5035FB327578B45007E379D /* Frameworks */,
 				A5035FB427578B45007E379D /* Resources */,
+				A5035FF427578CAA007E379D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -112,12 +368,35 @@
 			mainGroup = A5035FAD27578B45007E379D;
 			productRefGroup = A5035FB727578B45007E379D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A5035FE927578C53007E379D /* Products */;
+					ProjectRef = A5035FE827578C53007E379D /* Starscream.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A5035FB527578B45007E379D /* Projet Drone */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A5035FEE27578C53007E379D /* Starscream.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Starscream.framework;
+			remoteRef = A5035FED27578C53007E379D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A5035FF027578C53007E379D /* Starscream Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Starscream Tests.xctest";
+			remoteRef = A5035FEF27578C53007E379D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A5035FB427578B45007E379D /* Resources */ = {
@@ -137,9 +416,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5097A772757A1D000CE7DB5 /* SPRKToy.swift in Sources */,
+				A5097A5E2757A1A300CE7DB5 /* String+Utils.swift in Sources */,
+				A5097A9D2757A20C00CE7DB5 /* ShouldActionCompleteResponse.swift in Sources */,
+				A5097A852757A1D000CE7DB5 /* ToyBox.swift in Sources */,
+				A5097A832757A1D000CE7DB5 /* ToyProtocols.swift in Sources */,
+				A5097A782757A1D000CE7DB5 /* SensorControlV1.swift in Sources */,
+				A5097AA42757A20C00CE7DB5 /* CommandV1Sequencer.swift in Sources */,
+				A5097A7C2757A1D000CE7DB5 /* SensorControlV2.swift in Sources */,
+				A5097A842757A1D000CE7DB5 /* CBUUID+SpheroUUIDs.swift in Sources */,
+				A5097A9E2757A20C00CE7DB5 /* SensorCommandResponseV2.swift in Sources */,
+				A5097A5D2757A1A300CE7DB5 /* Double+Utils.swift in Sources */,
+				A5097AA72757A33400CE7DB5 /* WebSocketManager.swift in Sources */,
+				A5097A9B2757A20C00CE7DB5 /* CommandV2.swift in Sources */,
+				A5097A7F2757A1D000CE7DB5 /* BoltToy.swift in Sources */,
+				A5097AA02757A20C00CE7DB5 /* SensorMaskCommandResponse.swift in Sources */,
+				A5097A9A2757A20C00CE7DB5 /* CommandSequencerV2.swift in Sources */,
 				A5035FBE27578B45007E379D /* ViewController.swift in Sources */,
+				A5097A762757A1D000CE7DB5 /* SensorControl.swift in Sources */,
+				A5097AA22757A20C00CE7DB5 /* CollisionData.swift in Sources */,
 				A5035FBA27578B45007E379D /* AppDelegate.swift in Sources */,
+				A5097A9F2757A20C00CE7DB5 /* SensorCommandResponse.swift in Sources */,
+				A5097AA32757A20C00CE7DB5 /* CommandV1Operation.swift in Sources */,
+				A5097AA12757A20C00CE7DB5 /* PowerStateResponse.swift in Sources */,
 				A5035FBC27578B45007E379D /* SceneDelegate.swift in Sources */,
+				A5097A7B2757A1D000CE7DB5 /* BB8Toy.swift in Sources */,
+				A5097A7D2757A1D000CE7DB5 /* BB9EToy.swift in Sources */,
+				A5097A9C2757A20C00CE7DB5 /* VersionsCommandResponse.swift in Sources */,
+				A5097A582757A18000CE7DB5 /* SDKUtils.swift in Sources */,
+				A5097A792757A1D000CE7DB5 /* SpheroV1Toy.swift in Sources */,
+				A5097A802757A1D000CE7DB5 /* R2D2Toy.swift in Sources */,
+				A5097A822757A1D000CE7DB5 /* MiniToy.swift in Sources */,
+				A5097A812757A1D000CE7DB5 /* SpheroV2ToyCore.swift in Sources */,
+				A5097A752757A1D000CE7DB5 /* Toy.swift in Sources */,
+				A5097AA52757A20C00CE7DB5 /* CommandV1.swift in Sources */,
+				A5097A982757A20C00CE7DB5 /* SensorUtils.swift in Sources */,
+				A5097A7A2757A1D000CE7DB5 /* SpheroV1ToyCore.swift in Sources */,
+				A5097A552757A14700CE7DB5 /* SpheroToyBox.swift in Sources */,
+				A5097A992757A20C00CE7DB5 /* CommandOperationV2.swift in Sources */,
+				A5097A5C2757A1A300CE7DB5 /* Color+Utils.swift in Sources */,
+				A5097AA92757A3EA00CE7DB5 /* ConnectionViewController.swift in Sources */,
+				A5097A7E2757A1D000CE7DB5 /* SpheroV2Toy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
