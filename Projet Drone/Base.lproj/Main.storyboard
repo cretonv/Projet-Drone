@@ -69,6 +69,14 @@
                                     <action selector="startListening:" destination="MfF-NS-IZy" eventType="touchUpInside" id="QY4-jn-ZAL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHd-XQ-EqN">
+                                <rect key="frame" x="99" y="318" width="217" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Envoyer un message au serveur"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="MfF-NS-IZy" eventType="touchUpInside" id="vgU-th-2jL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JQ2-sL-tJE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
