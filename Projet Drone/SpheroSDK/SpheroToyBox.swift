@@ -34,6 +34,33 @@ class SharedToyBox {
         box.start()
     }
     
+    func giveIndexIdToBolts() {
+        var i = 1
+        for b in bolts {
+            b.indexId = i
+            i += 1
+        }
+    }
+    
+    func changeActives() {
+        for b in bolts {
+            b.changeActiveStatus()
+        }
+    }
+    
+    func setActives() {
+        var i = 0
+        for b in bolts {
+            if(i == 0) {
+                b.isActive = false
+                b.changeActiveStatus()
+            } else {
+                b.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .red)
+            }
+            i += 1
+        }
+    }
+    
     func stopScan() {
         box.stopScan()
     }

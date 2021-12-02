@@ -30,6 +30,8 @@ class ViewController: UIViewController {
             print("Connecté")
         }
         
+        SharedToyBox.instance.setActives()
+        
         var currentAccData = [Double]()
         
         for bolt in SharedToyBox.instance.bolts {
@@ -46,7 +48,7 @@ class ViewController: UIViewController {
                                 // PAS BIEN!!!
                                 currentAccData.append(contentsOf: [acceleration.x!, acceleration.y!, acceleration.z!])
                                 let absSum = abs(acceleration.x!)+abs(acceleration.y!)+abs(acceleration.z!)
-                                if absSum > 6 {
+                                if absSum > 6 && bolt.isActive == true {
                                     print("Secousse")
                                     self.timer?.invalidate()
                                     self.isListening = false
@@ -60,9 +62,11 @@ class ViewController: UIViewController {
                                             } else if(self.tapSum == 5) {
                                                 bolt.textToDisplay += "Au Revoir"
                                             } else if(self.tapSum == 10) {
-                                                //WebSocketManager.instance.sendOn(path: "toto", value: String(self.textToDisplay))
-                                                print(self.textToDisplay)
-                                                bolt.textToDisplay = "Message envoyé"
+                                                SocketIOManager.instance.writeValue("user-\(bolt.indexId!) : \(bolt.textToDisplay)", toChannel: "send_message") {
+                                                    print("Message envoyé")
+                                                }
+                                                bolt.textToDisplay = "user \(bolt.indexId!) : Message envoyé"
+                                                SharedToyBox.instance.changeActives()
                                             } else {
                                                 bolt.textToDisplay += String(self.tapSum)
                                             }
@@ -94,7 +98,7 @@ class ViewController: UIViewController {
     
     @IBAction func sendMessage(_ sender: Any) {
         SocketIOManager.instance.writeValue("Test message", toChannel: "send_message") {
-            print("Message envoyé")
+            print("user-1 : Message from sphero 1")
         }
     }
 }

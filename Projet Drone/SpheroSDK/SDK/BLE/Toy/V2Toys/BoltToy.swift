@@ -17,7 +17,9 @@ class BoltToy: SpheroV2Toy {
     
     // CUSTOM var
     var textToDisplay = ""
-    
+    var indexId: Int?
+    var isActive = false
+
     override class var descriptor: String { return "SB-" }
     
     public override var batteryLevel: Double? {
@@ -29,6 +31,24 @@ class BoltToy: SpheroV2Toy {
     
     func setMainLed(color: UIColor) {
         setMatrix(color: color)
+    }
+    
+    func changeActiveStatus() {
+        if self.isActive {
+            self.isActive = false
+            self.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .red)
+        } else {
+            self.isActive = true
+            self.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .green)
+        }
+    }
+    
+    func lightGoodLed() {
+        if self.isActive {
+            self.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .green)
+        } else {
+            self.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .red)
+        }
     }
     
     // These commands should be made availble to the user of the app
@@ -92,6 +112,7 @@ class BoltToy: SpheroV2Toy {
     func scrollMatrix(text: String, color: UIColor, speed: Int, loop: ScrollingTextLoopMode) {
         let slicedString = String(text.prefix(maxScrollingTextLength))
         core.send(SetMatrixScrollingText(text: slicedString, color: color, speed: UInt8((0...maxScrollingTextSpeed).clamp(speed)), loop: loop.rawValue))
+        self.lightGoodLed()
     }
 }
 

@@ -34,6 +34,7 @@ class ConnectionViewController: UIViewController {
         SharedToyBox.instance.searchForBoltsNamed(["SB-5D1C", "SB-92B2"]) { err in
             if err == nil {
                 self.connectionStateSpheroLabel.text = "Connected"
+                SharedToyBox.instance.giveIndexIdToBolts()
             }
         }
     }

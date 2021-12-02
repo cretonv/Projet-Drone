@@ -46,6 +46,9 @@ public struct ToyDescriptor {
 
 public final class ToyBox:NSObject {
     
+    // Custom var
+    var i = 1
+    
     class ToyBoxListenerWeakWrapper {
         weak var value: ToyBoxListener?
         
