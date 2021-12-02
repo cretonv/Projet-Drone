@@ -56,6 +56,8 @@ class SharedToyBox {
                 b.changeActiveStatus()
             } else {
                 b.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .red)
+                b.setBackLed(color: .red)
+                b.setFrontLed(color: .red)
             }
             i += 1
         }

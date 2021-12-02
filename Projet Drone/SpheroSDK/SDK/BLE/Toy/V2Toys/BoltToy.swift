@@ -37,9 +37,13 @@ class BoltToy: SpheroV2Toy {
         if self.isActive {
             self.isActive = false
             self.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .red)
+            self.setBackLed(color: .red)
+            self.setFrontLed(color: .red)
         } else {
             self.isActive = true
             self.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .green)
+            self.setBackLed(color: .green)
+            self.setFrontLed(color: .green)
         }
     }
     
