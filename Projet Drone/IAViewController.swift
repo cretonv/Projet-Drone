@@ -138,6 +138,14 @@ class IAViewController: UIViewController {
         }
     }
     
+    func saveNN() {
+        neuralNet?.write(FFNN.getFileURL("toto"))
+    }
+    
+    func loadNN() {
+        neuralNet = FFNN.read(FFNN.getFileURL("toto"))
+    }
+    
     @IBAction func trainButtonClicked(_ sender: Any) {
         
         trainNetwork()
@@ -200,5 +208,8 @@ class IAViewController: UIViewController {
         isRecording = true
     }
     
-
+    @IBAction func saveButtonClicked(_ sender: Any) {
+        saveNN()
+    }
+    
 }

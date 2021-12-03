@@ -148,10 +148,21 @@
                                     <action selector="segementedControlChanged:" destination="f9O-gW-veE" eventType="valueChanged" id="es6-R4-rSD"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwf-iS-9j5">
+                                <rect key="frame" x="188.5" y="433" width="37" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="92g-MD-pgR"/>
+                                </constraints>
+                                <state key="normal" title="SAVE"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="f9O-gW-veE" eventType="touchUpInside" id="rlm-7Z-waw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ngp-7v-SPH"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Mwf-iS-9j5" firstAttribute="centerX" secondItem="Nli-H2-Zco" secondAttribute="centerX" id="0K7-dF-B1j"/>
                             <constraint firstItem="ngp-7v-SPH" firstAttribute="trailing" secondItem="KOe-gM-5Ry" secondAttribute="trailing" id="9cx-iJ-EA0"/>
                             <constraint firstItem="ngp-7v-SPH" firstAttribute="trailing" secondItem="ucl-Bm-hPq" secondAttribute="trailing" id="GNq-Sb-r12"/>
                             <constraint firstItem="ucl-Bm-hPq" firstAttribute="leading" secondItem="ngp-7v-SPH" secondAttribute="leading" id="QeD-bL-coK"/>
@@ -160,6 +171,7 @@
                             <constraint firstItem="KOe-gM-5Ry" firstAttribute="leading" secondItem="ngp-7v-SPH" secondAttribute="leading" id="YiG-RU-erL"/>
                             <constraint firstItem="ngp-7v-SPH" firstAttribute="trailing" secondItem="Nli-H2-Zco" secondAttribute="trailing" id="hnp-TL-vme"/>
                             <constraint firstItem="ngp-7v-SPH" firstAttribute="bottom" secondItem="KOe-gM-5Ry" secondAttribute="bottom" constant="20" id="jmk-Lj-a26"/>
+                            <constraint firstItem="Mwf-iS-9j5" firstAttribute="top" secondItem="Nli-H2-Zco" secondAttribute="bottom" constant="108" id="nge-YJ-1t6"/>
                             <constraint firstItem="Nli-H2-Zco" firstAttribute="leading" secondItem="ngp-7v-SPH" secondAttribute="leading" id="prm-VM-xhY"/>
                         </constraints>
                     </view>
