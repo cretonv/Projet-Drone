@@ -58,9 +58,9 @@ class ViewController: UIViewController {
                                         self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { t in
                                             print("tapSum: \(self.tapSum)")
                                             if(self.tapSum == 3) {
-                                                bolt.textToDisplay += "Bonjour"
+                                                bolt.textToDisplay += "3"
                                             } else if(self.tapSum == 5) {
-                                                bolt.textToDisplay += "Au Revoir"
+                                                bolt.textToDisplay += "5"
                                             } else if(self.tapSum == 10) {
                                                 SocketIOManager.instance.writeValue("user-\(bolt.indexId!) : \(bolt.textToDisplay)", toChannel: "send_message") {
                                                     print("Message envoyé")

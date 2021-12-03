@@ -52,6 +52,18 @@
 		A5097AA52757A20C00CE7DB5 /* CommandV1.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097A972757A20C00CE7DB5 /* CommandV1.swift */; };
 		A5097AA92757A3EA00CE7DB5 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097AA82757A3EA00CE7DB5 /* ConnectionViewController.swift */; };
 		A55153A227580177000B2AA7 /* Pods_Projet_Drone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93886F2C69BF06624DF68E /* Pods_Projet_Drone.framework */; };
+		A55E48E827591342003144AD /* IAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E48E727591342003144AD /* IAViewController.swift */; };
+		A5E439AF2759162E000FD6E6 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439A72759162E000FD6E6 /* Storage.swift */; };
+		A5E439B02759162E000FD6E6 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439A82759162E000FD6E6 /* Random.swift */; };
+		A5E439B12759162E000FD6E6 /* FFNN+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439A92759162E000FD6E6 /* FFNN+Storage.swift */; };
+		A5E439B22759162E000FD6E6 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439AA2759162E000FD6E6 /* Vector.swift */; };
+		A5E439B32759162E000FD6E6 /* FFNN.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439AB2759162E000FD6E6 /* FFNN.swift */; };
+		A5E439B42759162E000FD6E6 /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439AC2759162E000FD6E6 /* Operations.swift */; };
+		A5E439B52759162E000FD6E6 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439AD2759162E000FD6E6 /* Matrix.swift */; };
+		A5E439B62759162E000FD6E6 /* FFNN+Metal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439AE2759162E000FD6E6 /* FFNN+Metal.swift */; };
+		A5E439BB27591646000FD6E6 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439B827591646000FD6E6 /* GraphView.swift */; };
+		A5E439BC27591646000FD6E6 /* CGContext+GraphLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439B927591646000FD6E6 /* CGContext+GraphLines.swift */; };
+		A5E439BD27591646000FD6E6 /* GraphSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439BA27591646000FD6E6 /* GraphSegment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +117,18 @@
 		A551539627580019000B2AA7 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A551539A2758001D000B2AA7 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A551539D275800E3000B2AA7 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A55E48E727591342003144AD /* IAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAViewController.swift; sourceTree = "<group>"; };
+		A5E439A72759162E000FD6E6 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		A5E439A82759162E000FD6E6 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		A5E439A92759162E000FD6E6 /* FFNN+Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FFNN+Storage.swift"; sourceTree = "<group>"; };
+		A5E439AA2759162E000FD6E6 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		A5E439AB2759162E000FD6E6 /* FFNN.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFNN.swift; sourceTree = "<group>"; };
+		A5E439AC2759162E000FD6E6 /* Operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
+		A5E439AD2759162E000FD6E6 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
+		A5E439AE2759162E000FD6E6 /* FFNN+Metal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FFNN+Metal.swift"; sourceTree = "<group>"; };
+		A5E439B827591646000FD6E6 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		A5E439B927591646000FD6E6 /* CGContext+GraphLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+GraphLines.swift"; sourceTree = "<group>"; };
+		A5E439BA27591646000FD6E6 /* GraphSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSegment.swift; sourceTree = "<group>"; };
 		A8332B3D1C9EAE00C709F2AD /* Pods-Projet Drone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet Drone.release.xcconfig"; path = "Target Support Files/Pods-Projet Drone/Pods-Projet Drone.release.xcconfig"; sourceTree = "<group>"; };
 		D78847192287C2A3AEFF7E09 /* Pods-Projet Drone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Projet Drone.debug.xcconfig"; path = "Target Support Files/Pods-Projet Drone/Pods-Projet Drone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +183,8 @@
 		A5035FB827578B45007E379D /* Projet Drone */ = {
 			isa = PBXGroup;
 			children = (
+				A5E439B727591646000FD6E6 /* Graph */,
+				A5E439A62759162E000FD6E6 /* NeuralNet */,
 				A50151672757F84600DD666E /* SocketIO */,
 				A5097A532757A11700CE7DB5 /* SpheroSDK */,
 				A5035FB927578B45007E379D /* AppDelegate.swift */,
@@ -169,6 +195,7 @@
 				A5035FC427578B48007E379D /* LaunchScreen.storyboard */,
 				A5035FC727578B48007E379D /* Info.plist */,
 				A5097AA82757A3EA00CE7DB5 /* ConnectionViewController.swift */,
+				A55E48E727591342003144AD /* IAViewController.swift */,
 			);
 			path = "Projet Drone";
 			sourceTree = "<group>";
@@ -307,6 +334,32 @@
 			path = CommandV1;
 			sourceTree = "<group>";
 		};
+		A5E439A62759162E000FD6E6 /* NeuralNet */ = {
+			isa = PBXGroup;
+			children = (
+				A5E439A72759162E000FD6E6 /* Storage.swift */,
+				A5E439A82759162E000FD6E6 /* Random.swift */,
+				A5E439A92759162E000FD6E6 /* FFNN+Storage.swift */,
+				A5E439AA2759162E000FD6E6 /* Vector.swift */,
+				A5E439AB2759162E000FD6E6 /* FFNN.swift */,
+				A5E439AC2759162E000FD6E6 /* Operations.swift */,
+				A5E439AD2759162E000FD6E6 /* Matrix.swift */,
+				A5E439AE2759162E000FD6E6 /* FFNN+Metal.swift */,
+			);
+			name = NeuralNet;
+			path = "../../SparkStarterKitForStudents-master/SparkPerso/SparkPerso/NeuralNet";
+			sourceTree = "<group>";
+		};
+		A5E439B727591646000FD6E6 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				A5E439B827591646000FD6E6 /* GraphView.swift */,
+				A5E439B927591646000FD6E6 /* CGContext+GraphLines.swift */,
+				A5E439BA27591646000FD6E6 /* GraphSegment.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E439BD27591646000FD6E6 /* GraphSegment.swift in Sources */,
 				A5097A772757A1D000CE7DB5 /* SPRKToy.swift in Sources */,
 				A5097A5E2757A1A300CE7DB5 /* String+Utils.swift in Sources */,
 				A5097A9D2757A20C00CE7DB5 /* ShouldActionCompleteResponse.swift in Sources */,
@@ -429,9 +483,12 @@
 				A5097A782757A1D000CE7DB5 /* SensorControlV1.swift in Sources */,
 				A5097AA42757A20C00CE7DB5 /* CommandV1Sequencer.swift in Sources */,
 				A5097A7C2757A1D000CE7DB5 /* SensorControlV2.swift in Sources */,
+				A5E439BC27591646000FD6E6 /* CGContext+GraphLines.swift in Sources */,
 				A5097A842757A1D000CE7DB5 /* CBUUID+SpheroUUIDs.swift in Sources */,
+				A5E439B12759162E000FD6E6 /* FFNN+Storage.swift in Sources */,
 				A5097A9E2757A20C00CE7DB5 /* SensorCommandResponseV2.swift in Sources */,
 				A501516B2757F84600DD666E /* SocketIOManager.swift in Sources */,
+				A5E439B52759162E000FD6E6 /* Matrix.swift in Sources */,
 				A5097A5D2757A1A300CE7DB5 /* Double+Utils.swift in Sources */,
 				A5097A9B2757A20C00CE7DB5 /* CommandV2.swift in Sources */,
 				A5097A7F2757A1D000CE7DB5 /* BoltToy.swift in Sources */,
@@ -439,14 +496,19 @@
 				A5097A9A2757A20C00CE7DB5 /* CommandSequencerV2.swift in Sources */,
 				A5035FBE27578B45007E379D /* ViewController.swift in Sources */,
 				A5097A762757A1D000CE7DB5 /* SensorControl.swift in Sources */,
+				A55E48E827591342003144AD /* IAViewController.swift in Sources */,
 				A5097AA22757A20C00CE7DB5 /* CollisionData.swift in Sources */,
+				A5E439B32759162E000FD6E6 /* FFNN.swift in Sources */,
 				A5035FBA27578B45007E379D /* AppDelegate.swift in Sources */,
 				A5097A9F2757A20C00CE7DB5 /* SensorCommandResponse.swift in Sources */,
 				A5097AA32757A20C00CE7DB5 /* CommandV1Operation.swift in Sources */,
 				A5097AA12757A20C00CE7DB5 /* PowerStateResponse.swift in Sources */,
+				A5E439B02759162E000FD6E6 /* Random.swift in Sources */,
+				A5E439B42759162E000FD6E6 /* Operations.swift in Sources */,
 				A5035FBC27578B45007E379D /* SceneDelegate.swift in Sources */,
 				A5097A7B2757A1D000CE7DB5 /* BB8Toy.swift in Sources */,
 				A5097A7D2757A1D000CE7DB5 /* BB9EToy.swift in Sources */,
+				A5E439AF2759162E000FD6E6 /* Storage.swift in Sources */,
 				A5097A9C2757A20C00CE7DB5 /* VersionsCommandResponse.swift in Sources */,
 				A5097A582757A18000CE7DB5 /* SDKUtils.swift in Sources */,
 				A5097A792757A1D000CE7DB5 /* SpheroV1Toy.swift in Sources */,
@@ -459,8 +521,11 @@
 				A5097A7A2757A1D000CE7DB5 /* SpheroV1ToyCore.swift in Sources */,
 				A5097A552757A14700CE7DB5 /* SpheroToyBox.swift in Sources */,
 				A5097A992757A20C00CE7DB5 /* CommandOperationV2.swift in Sources */,
+				A5E439B62759162E000FD6E6 /* FFNN+Metal.swift in Sources */,
 				A5097A5C2757A1A300CE7DB5 /* Color+Utils.swift in Sources */,
+				A5E439BB27591646000FD6E6 /* GraphView.swift in Sources */,
 				A5097AA92757A3EA00CE7DB5 /* ConnectionViewController.swift in Sources */,
+				A5E439B22759162E000FD6E6 /* Vector.swift in Sources */,
 				A5097A7E2757A1D000CE7DB5 /* SpheroV2Toy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

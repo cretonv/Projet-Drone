@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e8x-v5-JF9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -39,6 +40,14 @@
                                     <action selector="goToListening:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OLm-sW-MCl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iYa-3w-fcx">
+                                <rect key="frame" x="173" y="433" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Aller à l'IA"/>
+                                <connections>
+                                    <action selector="goToIA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8kf-LW-GkV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -47,11 +56,12 @@
                     <connections>
                         <outlet property="connectionStateSpheroLabel" destination="lN6-RX-T4I" id="LeY-pd-X9c"/>
                         <segue destination="MfF-NS-IZy" kind="show" identifier="goToListening" id="eCi-Kf-vAQ"/>
+                        <segue destination="f9O-gW-veE" kind="show" identifier="goToIA" id="lGO-92-U8F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="76"/>
+            <point key="canvasLocation" x="1111.5942028985507" y="75.669642857142847"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="82U-5h-wfM">
@@ -104,6 +114,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmt-lI-6oV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.98550724637681" y="75.669642857142847"/>
+        </scene>
+        <!--Sensor-->
+        <scene sceneID="fKI-pv-FQp">
+            <objects>
+                <viewController id="f9O-gW-veE" customClass="IAViewController" customModule="Projet_Drone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6kX-ei-Nyu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nli-H2-Zco" customClass="GraphView" customModule="Projet_Drone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="159" width="414" height="166"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="166" id="3JA-Bc-6Rh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOe-gM-5Ry" customClass="GraphView" customModule="Projet_Drone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="605" width="414" height="237"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="237" id="dQd-Lf-olz"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ucl-Bm-hPq">
+                                <rect key="frame" x="0.0" y="105" width="414" height="32"/>
+                                <segments>
+                                    <segment title="Carre"/>
+                                    <segment title="Triangle"/>
+                                    <segment title="Rond"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segementedControlChanged:" destination="f9O-gW-veE" eventType="valueChanged" id="es6-R4-rSD"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ngp-7v-SPH"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ngp-7v-SPH" firstAttribute="trailing" secondItem="KOe-gM-5Ry" secondAttribute="trailing" id="9cx-iJ-EA0"/>
+                            <constraint firstItem="ngp-7v-SPH" firstAttribute="trailing" secondItem="ucl-Bm-hPq" secondAttribute="trailing" id="GNq-Sb-r12"/>
+                            <constraint firstItem="ucl-Bm-hPq" firstAttribute="leading" secondItem="ngp-7v-SPH" secondAttribute="leading" id="QeD-bL-coK"/>
+                            <constraint firstItem="Nli-H2-Zco" firstAttribute="top" secondItem="ucl-Bm-hPq" secondAttribute="bottom" constant="23" id="Ub9-mT-tJc"/>
+                            <constraint firstItem="ucl-Bm-hPq" firstAttribute="top" secondItem="ngp-7v-SPH" secondAttribute="top" constant="17" id="UhN-kZ-4MV"/>
+                            <constraint firstItem="KOe-gM-5Ry" firstAttribute="leading" secondItem="ngp-7v-SPH" secondAttribute="leading" id="YiG-RU-erL"/>
+                            <constraint firstItem="ngp-7v-SPH" firstAttribute="trailing" secondItem="Nli-H2-Zco" secondAttribute="trailing" id="hnp-TL-vme"/>
+                            <constraint firstItem="ngp-7v-SPH" firstAttribute="bottom" secondItem="KOe-gM-5Ry" secondAttribute="bottom" constant="20" id="jmk-Lj-a26"/>
+                            <constraint firstItem="Nli-H2-Zco" firstAttribute="leading" secondItem="ngp-7v-SPH" secondAttribute="leading" id="prm-VM-xhY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sensor" id="t1e-VG-vq4">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Start" id="z0j-mL-Vqb">
+                                <connections>
+                                    <action selector="startButtonClicked:" destination="f9O-gW-veE" id="xMT-HI-enS"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Train" id="gWg-m5-r6c">
+                                <connections>
+                                    <action selector="trainButtonClicked:" destination="f9O-gW-veE" id="PRK-BI-Omo"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Predict" id="eho-PB-Mwr">
+                                <connections>
+                                    <action selector="predictButtonClicked:" destination="f9O-gW-veE" id="gVX-XW-zQp"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="acceleroChart" destination="Nli-H2-Zco" id="sGQ-6g-w03"/>
+                        <outlet property="gyroChart" destination="KOe-gM-5Ry" id="Nu1-b2-eP3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rnj-mj-p1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1112" y="-734"/>
         </scene>
     </scenes>
     <resources>

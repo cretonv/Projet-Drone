@@ -42,4 +42,7 @@ class ConnectionViewController: UIViewController {
         self.performSegue(withIdentifier: "goToListening", sender: nil)
     }
     
+    @IBAction func goToIA(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToIA", sender: nil)
+    }
 }
