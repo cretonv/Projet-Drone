@@ -50,9 +50,13 @@ class IAViewController: UIViewController {
         SharedToyBox.instance.bolt?.sensorControl.enable(sensors: SensorMask.init(arrayLiteral: .accelerometer,.gyro))
         SharedToyBox.instance.bolt?.sensorControl.interval = 1
         SharedToyBox.instance.bolt?.setStabilization(state: SetStabilization.State.off)
+        SharedToyBox.instance.bolt?.displayArrow(color: .red)
+
         SharedToyBox.instance.bolt?.sensorControl.onDataReady = { data in
             DispatchQueue.main.async {
                 if self.isRecording || self.isPredicting {
+                    print("PASSE")
+                    SharedToyBox.instance.bolt?.displayArrow(color: .green)
                     if let acceleration = data.accelerometer?.filteredAcceleration {
                         // PAS BIEN!!!
                         currentAccData.append(contentsOf: [acceleration.x!, acceleration.y!, acceleration.z!])
@@ -66,7 +70,7 @@ class IAViewController: UIViewController {
                         self.acceleroChart.add(dataToDisplay)
                     }
                     
-                    
+                                        
                     if let gyro = data.gyro?.rotationRate {
                         // TOUJOURS PAS BIEN!!!
                         let rotationRate: double3 = [Double(gyro.x!)/2000.0, Double(gyro.y!)/2000.0, Double(gyro.z!)/2000.0]
@@ -76,6 +80,7 @@ class IAViewController: UIViewController {
                     
                     if currentAccData.count+currentGyroData.count >= 3600 {
                         print("Data ready for network!")
+                        SharedToyBox.instance.bolt?.displayArrow(color: .red)
                         if self.isRecording {
                             self.isRecording = false
                             
