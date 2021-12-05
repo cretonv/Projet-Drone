@@ -36,7 +36,7 @@ class SocketIOManager {
     var socket:SocketIOClient? = nil
         
     func setup() {
-        manager = SocketManager(socketURL: URL(string: "http://172.17.129.186:4000")!)
+        manager = SocketManager(socketURL: URL(string: "http://192.168.0.18:4000")!)
         socket = manager?.defaultSocket
         
     }

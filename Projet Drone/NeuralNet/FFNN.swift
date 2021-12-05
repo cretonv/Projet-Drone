@@ -378,10 +378,10 @@ public extension FFNN {
     /// Returns an NSURL for a document with the given filename in the default documents directory.
     public static func getFileURL(_ filename: String) -> URL {
         let manager = FileManager.default
-        //let dirURL = try! manager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        let dirURL = URL(fileURLWithPath: "/Users/vincentcreton/Desktop/")
-        //return dirURL.appendingPathComponent(filename)
-        return dirURL
+        let dirURL = try! manager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        //let dirURL = URL(fileURLWithPath: "/Users/vincentcreton/Desktop/")
+        return dirURL.appendingPathComponent(filename)
+        
     }
     
     /// Reads a FFNN stored in a file at the given URL.
@@ -432,7 +432,12 @@ public extension FFNN {
         
         let data: Data = NSKeyedArchiver.archivedData(withRootObject: storage)
         
-        try? data.write(to: url, options: [.atomic])
+        do {
+            try? data.write(to: url, options: [.atomic])
+        } catch let error as NSError {
+            print("ERROR: \(error)")
+        }
+        
     }
     
     /// Computes the error over the given training set.

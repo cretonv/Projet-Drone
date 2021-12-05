@@ -55,7 +55,7 @@ class IAViewController: UIViewController {
         SharedToyBox.instance.bolt?.sensorControl.onDataReady = { data in
             DispatchQueue.main.async {
                 if self.isRecording || self.isPredicting {
-                    print("PASSE")
+                    
                     SharedToyBox.instance.bolt?.displayArrow(color: .green)
                     if let acceleration = data.accelerometer?.filteredAcceleration {
                         // PAS BIEN!!!
@@ -139,7 +139,15 @@ class IAViewController: UIViewController {
     }
     
     func saveNN() {
-        neuralNet?.write(FFNN.getFileURL("toto"))
+        let now = Date()
+
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+
+        let datetime = formatter.string(from: now)
+        print(datetime)
+        neuralNet?.write(FFNN.getFileURL(datetime))
     }
     
     func loadNN() {
