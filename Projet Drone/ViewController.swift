@@ -65,7 +65,8 @@ class ViewController: UIViewController {
                                                 SocketIOManager.instance.writeValue("user-\(bolt.indexId!) : \(bolt.textToDisplay)", toChannel: "send_message") {
                                                     print("Message envoyé")
                                                 }
-                                                bolt.textToDisplay = "user \(bolt.indexId!) : Message envoyé"
+                                                bolt.textToDisplay = ""
+                                                bolt.makePanelGreen()
                                                 SharedToyBox.instance.changeActives()
                                             } else {
                                                 bolt.textToDisplay += String(self.tapSum)

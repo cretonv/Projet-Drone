@@ -12,13 +12,14 @@ import AVFoundation
 class IAViewController: UIViewController {
     
     enum Classes:Int {
-        case Carre,Triangle,Rond
+        case Carre,Triangle,Lune,Vague
         
         func neuralNetResponse() -> [Double] {
             switch self {
-            case .Carre: return [1.0,0.0,0.0]
-            case .Triangle: return [0.0,1.0,0.0]
-            case .Rond: return [0.0,0.0,1.0]
+            case .Carre: return [1.0,0.0,0.0,0.0]
+            case .Triangle: return [0.0,1.0,0.0,0.0]
+            case .Lune: return [0.0,0.0,1.0,0.0]
+            case .Vague: return [0.0,0.0,0.0,1.0]
             }
         }
         
@@ -38,11 +39,12 @@ class IAViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        neuralNet = FFNN(inputs: 1800, hidden: 20, outputs: 3, learningRate: 0.3, momentum: 0.2, weights: nil, activationFunction: .Sigmoid, errorFunction:.crossEntropy(average: false))// .default(average: true))
+        neuralNet = FFNN(inputs: 1800, hidden: 20, outputs: 4, learningRate: 0.3, momentum: 0.2, weights: nil, activationFunction: .Sigmoid, errorFunction:.crossEntropy(average: false))// .default(average: true))
         
         movementData[.Carre] = []
-        movementData[.Rond] = []
+        movementData[.Lune] = []
         movementData[.Triangle] = []
+        movementData[.Vague] = []
         
         var currentAccData = [Double]()
         var currentGyroData = [Double]()
@@ -120,7 +122,8 @@ class IAViewController: UIViewController {
                             var str = "Je pense que c'est un "
                             switch recognizedClass {
                             case .Carre: str = str+"carré!"
-                            case .Rond: str = str+"rond!"
+                            case .Lune: str = str+"lune!"
+                            case .Vague: str = str+"vague!"
                             case .Triangle: str = str+"triangle!"
                             }
                             let utterance = AVSpeechUtterance(string: str)
@@ -151,7 +154,10 @@ class IAViewController: UIViewController {
     }
     
     func loadNN() {
-        neuralNet = FFNN.read(FFNN.getFileURL("toto"))
+        neuralNet = FFNN.read(FFNN.getFileURL("coco"))
+        let url = FFNN.getFileURL("coco")
+        print(url)
+        print(FFNN.read(url))
     }
     
     @IBAction func trainButtonClicked(_ sender: Any) {
@@ -220,4 +226,7 @@ class IAViewController: UIViewController {
         saveNN()
     }
     
+    @IBAction func loadButtonClicked(_ sender: Any) {
+        loadNN()
+    }
 }

@@ -142,20 +142,29 @@
                                 <segments>
                                     <segment title="Carre"/>
                                     <segment title="Triangle"/>
-                                    <segment title="Rond"/>
+                                    <segment title="Lune"/>
+                                    <segment title="Vague"/>
                                 </segments>
                                 <connections>
                                     <action selector="segementedControlChanged:" destination="f9O-gW-veE" eventType="valueChanged" id="es6-R4-rSD"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwf-iS-9j5">
-                                <rect key="frame" x="188.5" y="433" width="37" height="30"/>
+                                <rect key="frame" x="188.5" y="400" width="37" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="92g-MD-pgR"/>
                                 </constraints>
                                 <state key="normal" title="SAVE"/>
                                 <connections>
                                     <action selector="saveButtonClicked:" destination="f9O-gW-veE" eventType="touchUpInside" id="rlm-7Z-waw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xKo-W2-V9f">
+                                <rect key="frame" x="187" y="479" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="LOAD"/>
+                                <connections>
+                                    <action selector="loadButtonClicked:" destination="f9O-gW-veE" eventType="touchUpInside" id="fkl-w1-IMx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -171,7 +180,7 @@
                             <constraint firstItem="KOe-gM-5Ry" firstAttribute="leading" secondItem="ngp-7v-SPH" secondAttribute="leading" id="YiG-RU-erL"/>
                             <constraint firstItem="ngp-7v-SPH" firstAttribute="trailing" secondItem="Nli-H2-Zco" secondAttribute="trailing" id="hnp-TL-vme"/>
                             <constraint firstItem="ngp-7v-SPH" firstAttribute="bottom" secondItem="KOe-gM-5Ry" secondAttribute="bottom" constant="20" id="jmk-Lj-a26"/>
-                            <constraint firstItem="Mwf-iS-9j5" firstAttribute="top" secondItem="Nli-H2-Zco" secondAttribute="bottom" constant="108" id="nge-YJ-1t6"/>
+                            <constraint firstItem="Mwf-iS-9j5" firstAttribute="top" secondItem="Nli-H2-Zco" secondAttribute="bottom" constant="75" id="nge-YJ-1t6"/>
                             <constraint firstItem="Nli-H2-Zco" firstAttribute="leading" secondItem="ngp-7v-SPH" secondAttribute="leading" id="prm-VM-xhY"/>
                         </constraints>
                     </view>

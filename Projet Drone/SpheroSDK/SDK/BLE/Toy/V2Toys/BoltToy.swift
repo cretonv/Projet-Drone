@@ -55,6 +55,12 @@ class BoltToy: SpheroV2Toy {
         }
     }
     
+    func makePanelGreen() {
+        for i in 0...7 {
+            self.drawMatrixLine(from: Pixel(x: i, y: 0), to: Pixel(x: i, y: 7), color: .green)
+        }
+    }
+    
     // These commands should be made availble to the user of the app
     func setBackLed(color: UIColor) {
         core.send(SetBoltLEDCommand(ledMask: BoltLEDMask.back, color: color))
