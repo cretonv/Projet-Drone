@@ -147,6 +147,9 @@ class IAViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateStyle = .none
         formatter.timeStyle = .short
+        
+        
+        
 
         let datetime = formatter.string(from: now)
         print(datetime)
@@ -154,8 +157,8 @@ class IAViewController: UIViewController {
     }
     
     func loadNN() {
-        neuralNet = FFNN.read(FFNN.getFileURL("coco"))
-        let url = FFNN.getFileURL("coco")
+        neuralNet = FFNN.read(FFNN.getFileURL("withFour"))
+        let url = FFNN.getFileURL("withFour")
         print(url)
         print(FFNN.read(url))
     }
