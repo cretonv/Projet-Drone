@@ -48,6 +48,14 @@
                                     <action selector="goToIA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8kf-LW-GkV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sj-Fs-COk">
+                                <rect key="frame" x="159" y="510" width="96" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Aller à Predict"/>
+                                <connections>
+                                    <action selector="goToPredict:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bIR-Hc-dPP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,6 +65,7 @@
                         <outlet property="connectionStateSpheroLabel" destination="lN6-RX-T4I" id="LeY-pd-X9c"/>
                         <segue destination="MfF-NS-IZy" kind="show" identifier="goToListening" id="eCi-Kf-vAQ"/>
                         <segue destination="f9O-gW-veE" kind="show" identifier="goToIA" id="lGO-92-U8F"/>
+                        <segue destination="NZ0-fh-oxV" kind="show" identifier="goToPredict" id="jC0-tA-vYQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -210,7 +219,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnj-mj-p1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="-734"/>
+            <point key="canvasLocation" x="1996" y="-726"/>
+        </scene>
+        <!--Predict View Controller-->
+        <scene sceneID="dUq-Sv-n6A">
+            <objects>
+                <viewController id="NZ0-fh-oxV" customClass="PredictViewController" customModule="Projet_Drone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8H5-DH-vb7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RESULT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THg-JI-vhf">
+                                <rect key="frame" x="93" y="175" width="229" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK0-1B-U5d">
+                                <rect key="frame" x="150" y="294" width="119" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="PREDICT"/>
+                                <connections>
+                                    <action selector="predict:" destination="NZ0-fh-oxV" eventType="touchUpInside" id="cJk-ub-n2P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nG3-ib-k4T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HMG-g1-Wuq"/>
+                    <connections>
+                        <outlet property="resultLabel" destination="THg-JI-vhf" id="7mP-Xg-TfF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tkz-wr-VPa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1995.6521739130437" y="750"/>
         </scene>
     </scenes>
     <resources>

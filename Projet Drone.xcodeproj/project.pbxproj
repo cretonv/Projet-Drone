@@ -53,6 +53,7 @@
 		A5097AA92757A3EA00CE7DB5 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5097AA82757A3EA00CE7DB5 /* ConnectionViewController.swift */; };
 		A55153A227580177000B2AA7 /* Pods_Projet_Drone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E93886F2C69BF06624DF68E /* Pods_Projet_Drone.framework */; };
 		A55E48E827591342003144AD /* IAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55E48E727591342003144AD /* IAViewController.swift */; };
+		A5A7D697276783A60040D450 /* PredictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A7D696276783A60040D450 /* PredictViewController.swift */; };
 		A5E439BB27591646000FD6E6 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439B827591646000FD6E6 /* GraphView.swift */; };
 		A5E439BC27591646000FD6E6 /* CGContext+GraphLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439B927591646000FD6E6 /* CGContext+GraphLines.swift */; };
 		A5E439BD27591646000FD6E6 /* GraphSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5E439BA27591646000FD6E6 /* GraphSegment.swift */; };
@@ -118,6 +119,7 @@
 		A551539A2758001D000B2AA7 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A551539D275800E3000B2AA7 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55E48E727591342003144AD /* IAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAViewController.swift; sourceTree = "<group>"; };
+		A5A7D696276783A60040D450 /* PredictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictViewController.swift; sourceTree = "<group>"; };
 		A5E439B827591646000FD6E6 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		A5E439B927591646000FD6E6 /* CGContext+GraphLines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGContext+GraphLines.swift"; sourceTree = "<group>"; };
 		A5E439BA27591646000FD6E6 /* GraphSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphSegment.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				A5035FC727578B48007E379D /* Info.plist */,
 				A5097AA82757A3EA00CE7DB5 /* ConnectionViewController.swift */,
 				A55E48E727591342003144AD /* IAViewController.swift */,
+				A5A7D696276783A60040D450 /* PredictViewController.swift */,
 			);
 			path = "Projet Drone";
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				A5097A9D2757A20C00CE7DB5 /* ShouldActionCompleteResponse.swift in Sources */,
 				A5097A852757A1D000CE7DB5 /* ToyBox.swift in Sources */,
 				A5E439C9275A2A4E000FD6E6 /* FFNN+Storage.swift in Sources */,
+				A5A7D697276783A60040D450 /* PredictViewController.swift in Sources */,
 				A5E439C8275A2A4E000FD6E6 /* Random.swift in Sources */,
 				A5097A832757A1D000CE7DB5 /* ToyProtocols.swift in Sources */,
 				A5097A782757A1D000CE7DB5 /* SensorControlV1.swift in Sources */,

@@ -136,6 +136,8 @@ class IAViewController: UIViewController {
                             currentGyroData = []
                         }
                     }
+                } else {
+                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
                 }
             }
         }

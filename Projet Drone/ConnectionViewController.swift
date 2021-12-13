@@ -45,4 +45,8 @@ class ConnectionViewController: UIViewController {
     @IBAction func goToIA(_ sender: Any) {
         self.performSegue(withIdentifier: "goToIA", sender: nil)
     }
+    
+    @IBAction func goToPredict(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToPredict", sender: nil)
+    }
 }
