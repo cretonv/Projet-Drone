@@ -80,6 +80,8 @@ class IAViewController: UIViewController {
                         self.gyroChart.add(rotationRate)
                     }
                     
+                    print(currentAccData.count)
+                    
                     if currentAccData.count+currentGyroData.count >= 3600 {
                         print("Data ready for network!")
                         SharedToyBox.instance.bolt?.displayArrow(color: .red)
@@ -159,8 +161,8 @@ class IAViewController: UIViewController {
     }
     
     func loadNN() {
-        neuralNet = FFNN.read(FFNN.getFileURL("withFour"))
-        let url = FFNN.getFileURL("withFour")
+        neuralNet = FFNN.read(FFNN.getFileURL("toto"))
+        let url = FFNN.getFileURL("toto")
         print(url)
         print(FFNN.read(url))
     }

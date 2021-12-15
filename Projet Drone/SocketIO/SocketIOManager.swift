@@ -21,11 +21,11 @@ class SocketIOManager {
         }
         
         static func debugContext() -> Ctx {
-            return Ctx(ip: "192.168.0.30", port: "4000")
+            return Ctx(ip: "172.17.128.56", port: "4000")
         }
         
         static func newCtx() -> Ctx {
-            return Ctx(ip: "192.168.0.30", port: "4000")
+            return Ctx(ip: "172.17.128.56", port: "4000")
         }
 
     }
@@ -36,12 +36,21 @@ class SocketIOManager {
     var socket:SocketIOClient? = nil
         
     func setup() {
-        manager = SocketManager(socketURL: URL(string: "http://192.168.0.18:4000")!)
+        manager = SocketManager(socketURL: URL(string: "http://172.17.129.32:4000")!)
         socket = manager?.defaultSocket
-        
+    }
+    
+    func setRoom() {
+        manager = SocketManager(socketURL: URL(string: "http://172.17.129.32:4001")!)
+        socket = manager?.defaultSocket
     }
     
     func connect(callBack:@escaping ()->()) {
+        listenToConnection(callBack: callBack)
+        socket?.connect()
+    }
+    
+    func connectRoom(callBack:@escaping ()->()) {
         listenToConnection(callBack: callBack)
         socket?.connect()
     }

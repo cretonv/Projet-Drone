@@ -19,6 +19,7 @@ class BoltToy: SpheroV2Toy {
     var textToDisplay = ""
     var indexId: Int?
     var isActive = false
+    var boltNum: String?
 
     override class var descriptor: String { return "SB-" }
     
@@ -36,15 +37,17 @@ class BoltToy: SpheroV2Toy {
     func changeActiveStatus() {
         if self.isActive {
             self.isActive = false
-            self.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .red)
             self.setBackLed(color: .red)
             self.setFrontLed(color: .red)
         } else {
             self.isActive = true
-            self.drawMatrix(pixel: Pixel(x: 0, y: 3), color: .green)
             self.setBackLed(color: .green)
             self.setFrontLed(color: .green)
         }
+    }
+    
+    func setBoltNum(num: String) {
+        self.boltNum = num
     }
     
     func lightGoodLed() {
