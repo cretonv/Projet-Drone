@@ -36,12 +36,12 @@ class SocketIOManager {
     var socket:SocketIOClient? = nil
         
     func setup() {
-        manager = SocketManager(socketURL: URL(string: "http://172.17.129.32:4000")!)
+        manager = SocketManager(socketURL: URL(string: "http://192.168.2.1:4000")!)
         socket = manager?.defaultSocket
     }
     
     func setRoom() {
-        manager = SocketManager(socketURL: URL(string: "http://172.17.129.32:4001")!)
+        manager = SocketManager(socketURL: URL(string: "http://172.17.128.134:4001")!)
         socket = manager?.defaultSocket
     }
     

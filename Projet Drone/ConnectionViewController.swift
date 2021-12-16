@@ -31,7 +31,7 @@ class ConnectionViewController: UIViewController {
     
     // SPHERO CONNECTION
     @IBAction func connectionSpheroButtonClicked(_ sender: Any) {
-        SharedToyBox.instance.searchForBoltsNamed(["SB-808F"]) { err in
+        SharedToyBox.instance.searchForBoltsNamed(["SB-808F", "SB-5D1C"]) { err in
             if err == nil {
                 self.connectionStateSpheroLabel.text = "Connected"
                 SharedToyBox.instance.giveIndexIdToBolts()
@@ -48,6 +48,9 @@ class ConnectionViewController: UIViewController {
     
     @IBAction func goToPredict(_ sender: Any) {
         self.performSegue(withIdentifier: "goToPredict", sender: nil)
+    }
+    @IBAction func goToXavier(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "goToXavier", sender: nil)
     }
     @IBAction func setBoltNum(_ sender: UIButton) {
         if let bo = SharedToyBox.instance.bolt {

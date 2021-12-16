@@ -1,16 +1,16 @@
 //
-//  IAViewController.swift
+//  XavierViewController.swift
 //  Projet Drone
 //
-//  Created by Vincent Creton on 02/12/2021.
+//  Created by Vincent Creton on 15/12/2021.
 //
 
 import UIKit
 import simd
 import AVFoundation
 
-class IAViewController: UIViewController {
-    
+class XavierViewController: UIViewController {
+
     enum Classes:Int {
         case Carre,Triangle,Lune,Vague
         
@@ -27,34 +27,34 @@ class IAViewController: UIViewController {
     
     var neuralNet:FFNN? = nil
 
+    @IBOutlet weak var resultLabel: UILabel!
+    
     @IBOutlet weak var gyroChart: GraphView!
     @IBOutlet weak var acceleroChart: GraphView!
-    var movementData = [Classes:[[Float]]]()
+    var movementData = [Classes:[[Double]]]()
     var selectedClass = Classes.Carre
+    var isRecording = false
     var isPredicting = false
+    
+    var currentAccData = [Double]()
+    var currentGyroData = [Double]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        var currentAccData = [Double]()
-        var currentGyroData = [Double]()
         
         SocketIOManager.instance.setRoom()
         SocketIOManager.instance.connect {
             print("Connecté")
             SocketIOManager.instance.listenToChannel(channel: "start_detection") { str in
                 print("Received \(str)")
-                SharedToyBox.instance.bolt?.displayArrow(color: .green)
-
                 self.delay(2) {
                     print("GOOOOOOOOOOOOOOOOOOOOOOOO")
                     if(!self.isPredicting && str == SharedToyBox.instance.bolt?.boltNum) {
-                        currentAccData = []
-                        currentGyroData = []
+                        self.currentAccData = []
+                        self.currentGyroData = []
                         SharedToyBox.instance.bolt?.displayArrow(color: .green)
                         self.isPredicting = true
-                        
                     }
                 }
             }
@@ -68,20 +68,18 @@ class IAViewController: UIViewController {
         movementData[.Triangle] = []
         movementData[.Vague] = []
         
-        
-        
         SharedToyBox.instance.bolt?.sensorControl.enable(sensors: SensorMask.init(arrayLiteral: .accelerometer,.gyro))
         SharedToyBox.instance.bolt?.sensorControl.interval = 1
         SharedToyBox.instance.bolt?.setStabilization(state: SetStabilization.State.off)
         SharedToyBox.instance.bolt?.displayArrow(color: .red)
-        
+
         SharedToyBox.instance.bolt?.sensorControl.onDataReady = { data in
             DispatchQueue.main.async {
-                if self.isPredicting {
+                if self.isRecording || self.isPredicting {
                     
                     if let acceleration = data.accelerometer?.filteredAcceleration {
                         // PAS BIEN!!!
-                        currentAccData.append(contentsOf: [acceleration.x!, acceleration.y!, acceleration.z!])
+                        self.currentAccData.append(contentsOf: [acceleration.x!, acceleration.y!, acceleration.z!])
 //                        if acceleration.x! >= 0.65 {
 //                            print("droite")
 //                        }else if acceleration.x! <= -0.65 {
@@ -96,25 +94,41 @@ class IAViewController: UIViewController {
                     if let gyro = data.gyro?.rotationRate {
                         // TOUJOURS PAS BIEN!!!
                         let rotationRate: double3 = [Double(gyro.x!)/2000.0, Double(gyro.y!)/2000.0, Double(gyro.z!)/2000.0]
-                        currentGyroData.append(contentsOf: [Double(gyro.x!), Double(gyro.y!), Double(gyro.z!)])
+                        self.currentGyroData.append(contentsOf: [Double(gyro.x!), Double(gyro.y!), Double(gyro.z!)])
                         self.gyroChart.add(rotationRate)
                     }
                     
-                    print(currentAccData.count)
+                    print(self.currentAccData.count)
                     
-                    if currentAccData.count+currentGyroData.count >= 3600 {
+                    if self.currentAccData.count+self.currentGyroData.count >= 3600 {
                         print("Data ready for network!")
-                        
-                        //SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                        SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                        if self.isRecording {
+                            self.isRecording = false
+                            
+                            // Normalisation
+                            let minAcc = self.currentAccData.min()!
+                            let maxAcc = self.currentAccData.max()!
+                            let normalizedAcc = self.currentAccData.map { ($0 - minAcc) / (maxAcc - minAcc) }
+                            
+                            let minGyr = self.currentGyroData.min()!
+                            let maxGyr = self.currentGyroData.max()!
+                            let normalizedGyr = self.currentGyroData.map { ($0 - minGyr) / (maxGyr - minGyr) }
+                            
+                            self.movementData[self.selectedClass]?.append(normalizedAcc)
+                            self.currentAccData = []
+                            self.currentGyroData = []
+                        }
+                        if self.isPredicting {
                             self.isPredicting = false
                             
                             // Normalisation
-                            let minAcc = currentAccData.min()!
-                            let maxAcc = currentAccData.max()!
-                            let normalizedAcc = currentAccData.map { Float(($0 - minAcc) / (maxAcc - minAcc)) }
-                            let minGyr = currentGyroData.min()!
-                            let maxGyr = currentGyroData.max()!
-                            let normalizedGyr = currentGyroData.map { Float(($0 - minGyr) / (maxGyr - minGyr)) }
+                            let minAcc = self.currentAccData.min()!
+                            let maxAcc = self.currentAccData.max()!
+                            let normalizedAcc = self.currentAccData.map { Float(($0 - minAcc) / (maxAcc - minAcc)) }
+                            let minGyr = self.currentGyroData.min()!
+                            let maxGyr = self.currentGyroData.max()!
+                            let normalizedGyr = self.currentGyroData.map { Float(($0 - minGyr) / (maxGyr - minGyr)) }
                             
                             let prediction = try! self.neuralNet?.update(inputs: normalizedAcc)
                             
@@ -130,43 +144,45 @@ class IAViewController: UIViewController {
                             case .Carre:
                                 str = str+"carré!"
                                 SharedToyBox.instance.bolt?.scrollMatrix(text: "D", color: .green, speed: 3, loop: .noLoop)
+                                self.delay(5) {
+                                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                                }
                             case .Lune:
                                 str = str+"lune!"
                                 SharedToyBox.instance.bolt?.scrollMatrix(text: "I", color: .green, speed: 3, loop: .noLoop)
+                                self.delay(5) {
+                                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                                }
                             case .Vague:
                                 str = str+"vague!"
                                 SharedToyBox.instance.bolt?.scrollMatrix(text: "E", color: .green, speed: 3, loop: .noLoop)
+                                self.delay(5) {
+                                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                                }
                             case .Triangle:
                                 str = str+"triangle!"
                                 SharedToyBox.instance.bolt?.scrollMatrix(text: "A", color: .green, speed: 3, loop: .noLoop)
+                                self.delay(5) {
+                                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                                }
                             }
+                            self.resultLabel.text = str
+                            
+                            SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                            
                             let utterance = AVSpeechUtterance(string: str)
                             utterance.voice = AVSpeechSynthesisVoice(language: "fr-Fr")
                             utterance.rate = 0.4
                             
                             let synthesizer = AVSpeechSynthesizer()
                             synthesizer.speak(utterance)
-                            currentAccData = []
-                            currentGyroData = []
+                            self.currentAccData = []
+                            self.currentGyroData = []
                         }
+                    }
                 }
             }
         }
-    }
-    
-    func saveNN() {
-        let now = Date()
-
-        let formatter = DateFormatter()
-        formatter.dateStyle = .none
-        formatter.timeStyle = .short
-        
-        
-        
-
-        let datetime = formatter.string(from: now)
-        print(datetime)
-        neuralNet?.write(FFNN.getFileURL(datetime))
     }
     
     func delay(_ seconds: Double, completion: @escaping () -> ()) {
@@ -176,76 +192,19 @@ class IAViewController: UIViewController {
     }
     
     func loadNN() {
-        neuralNet = FFNN.read(FFNN.getFileURL("tata"))
-        let url = FFNN.getFileURL("tata")
+        neuralNet = FFNN.read(FFNN.getFileURL("toto"))
+        let url = FFNN.getFileURL("toto")
         print(url)
         print(FFNN.read(url))
     }
-    
-    @IBAction func trainButtonClicked(_ sender: Any) {
-        
-        trainNetwork()
-        
-    }
-    
     
     @IBAction func predictButtonClicked(_ sender: Any) {
         self.isPredicting = true
     }
     
-    func trainNetwork() {
-        
-        // --------------------------------------
-        // TRAINING
-        // --------------------------------------
-        for i in 0...20 {
-            print(i)
-            if let selectedClass = movementData.randomElement(),
-                let input = selectedClass.value.randomElement(){
-                let expectedResponse = selectedClass.key.neuralNetResponse()
-                
-                let floatInput = input.map{ Float($0) }
-                let floatRes = expectedResponse.map{ Float($0) }
-                
-                try! neuralNet?.update(inputs: floatInput) // -> [0.23,0.67,0.99]
-                try! neuralNet?.backpropagate(answer: floatRes)
-                
-            }
-        }
-        
-        // --------------------------------------
-        // VALIDATION
-        // --------------------------------------
-        for k in movementData.keys {
-            print("Inference for \(k)")
-            let values = movementData[k]!
-            for v in values {
-                let floatInput = v.map{ Float($0) }
-                let prediction = try! neuralNet?.update(inputs:floatInput)
-                print(prediction!)
-            }
-        }
-        
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         SharedToyBox.instance.bolt?.sensorControl.disable()
-    }
-
-    @IBAction func segementedControlChanged(_ sender: UISegmentedControl) {
-        let index = sender.selectedSegmentIndex
-        if let s  = Classes(rawValue: index){
-            selectedClass = s
-        }
-    }
-    
-    @IBAction func startButtonClicked(_ sender: Any) {
-        
-    }
-    
-    @IBAction func saveButtonClicked(_ sender: Any) {
-        saveNN()
     }
     
     @IBAction func loadButtonClicked(_ sender: Any) {

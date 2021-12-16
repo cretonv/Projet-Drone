@@ -38,6 +38,11 @@ class ViewController: UIViewController {
             bolt.sensorControl.enable(sensors: SensorMask.init(arrayLiteral: .accelerometer,.gyro))
             bolt.sensorControl.interval = 1
             bolt.setStabilization(state: SetStabilization.State.off)
+            if bolt.isActive {
+                bolt.makePanelGreen()
+            } else {
+                bolt.makePanelRed()
+            }
             bolt.sensorControl.onDataReady = { data in
                 DispatchQueue.main.async {
                     

@@ -43,6 +43,7 @@ class BoltToy: SpheroV2Toy {
             self.isActive = true
             self.setBackLed(color: .green)
             self.setFrontLed(color: .green)
+            self.makePanelGreen()
         }
     }
     
@@ -61,6 +62,12 @@ class BoltToy: SpheroV2Toy {
     func makePanelGreen() {
         for i in 0...7 {
             self.drawMatrixLine(from: Pixel(x: i, y: 0), to: Pixel(x: i, y: 7), color: .green)
+        }
+    }
+    
+    func makePanelRed() {
+        for i in 0...7 {
+            self.drawMatrixLine(from: Pixel(x: i, y: 0), to: Pixel(x: i, y: 7), color: .red)
         }
     }
     

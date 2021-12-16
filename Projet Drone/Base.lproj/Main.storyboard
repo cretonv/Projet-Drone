@@ -80,6 +80,14 @@
                                     <action selector="setBoltNum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v2e-0o-qWx"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBO-UL-0gc">
+                                <rect key="frame" x="162" y="588" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Aller à Xavier"/>
+                                <connections>
+                                    <action selector="goToXavier:" destination="BYZ-38-t0r" eventType="touchUpInside" id="la6-qH-oBj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -90,6 +98,7 @@
                         <segue destination="MfF-NS-IZy" kind="show" identifier="goToListening" id="eCi-Kf-vAQ"/>
                         <segue destination="f9O-gW-veE" kind="show" identifier="goToIA" id="lGO-92-U8F"/>
                         <segue destination="NZ0-fh-oxV" kind="show" identifier="goToPredict" id="jC0-tA-vYQ"/>
+                        <segue destination="8ef-S9-UGR" kind="show" identifier="goToXavier" id="cpR-wq-l4k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -244,6 +253,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rnj-mj-p1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1996" y="-726"/>
+        </scene>
+        <!--Xavier View Controller-->
+        <scene sceneID="P4j-RZ-9Pi">
+            <objects>
+                <viewController id="8ef-S9-UGR" customClass="XavierViewController" customModule="Projet_Drone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0nM-U5-iHM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="vyd-YP-pN6">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGY-xd-2qE" customClass="GraphView" customModule="Projet_Drone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="159" width="414" height="166"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="166" id="UnS-Gt-5LV"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEY-S3-4Se" customClass="GraphView" customModule="Projet_Drone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="605" width="414" height="237"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="237" id="Vcb-m6-ZEw"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrI-2K-WPT">
+                                        <rect key="frame" x="187" y="479" width="40" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="LOAD"/>
+                                        <connections>
+                                            <action selector="loadButtonClicked:" destination="f9O-gW-veE" eventType="touchUpInside" id="Q5V-5U-lOK"/>
+                                            <action selector="loadButtonClicked:" destination="8ef-S9-UGR" eventType="touchUpInside" id="cQ1-er-us8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCK-RQ-PNA">
+                                        <rect key="frame" x="161" y="408" width="95" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <state key="normal" title="PREDICT"/>
+                                        <connections>
+                                            <action selector="predictButtonClicked:" destination="8ef-S9-UGR" eventType="touchUpInside" id="VXL-sh-7lp"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wea-za-zrw">
+                                        <rect key="frame" x="31" y="522" width="351" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="jOj-gy-Vkn"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="CGY-xd-2qE" firstAttribute="top" secondItem="jOj-gy-Vkn" secondAttribute="top" constant="71" id="9Qy-hV-bLe"/>
+                                    <constraint firstItem="CGY-xd-2qE" firstAttribute="leading" secondItem="jOj-gy-Vkn" secondAttribute="leading" id="G2z-CX-QUx"/>
+                                    <constraint firstItem="jOj-gy-Vkn" firstAttribute="trailing" secondItem="TEY-S3-4Se" secondAttribute="trailing" id="QLN-sN-cyT"/>
+                                    <constraint firstItem="jOj-gy-Vkn" firstAttribute="bottom" secondItem="TEY-S3-4Se" secondAttribute="bottom" constant="20" id="c05-0B-Uh4"/>
+                                    <constraint firstItem="TEY-S3-4Se" firstAttribute="leading" secondItem="jOj-gy-Vkn" secondAttribute="leading" id="vHb-Pp-gPp"/>
+                                    <constraint firstItem="jOj-gy-Vkn" firstAttribute="trailing" secondItem="CGY-xd-2qE" secondAttribute="trailing" id="z3i-eD-9Ta"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Qp-SR-h4m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bzD-Tx-Y4T"/>
+                    <connections>
+                        <outlet property="acceleroChart" destination="CGY-xd-2qE" id="Ka9-xV-1EQ"/>
+                        <outlet property="gyroChart" destination="TEY-S3-4Se" id="gs0-8B-elG"/>
+                        <outlet property="resultLabel" destination="Wea-za-zrw" id="L7f-fW-ljI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NPF-uC-7tl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1108.6956521739132" y="774.77678571428567"/>
         </scene>
         <!--Predict View Controller-->
         <scene sceneID="dUq-Sv-n6A">
