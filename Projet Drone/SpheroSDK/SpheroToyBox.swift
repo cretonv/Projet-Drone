@@ -42,6 +42,42 @@ class SharedToyBox {
         }
     }
     
+    //TODO: Refacto 4 function under
+    
+    func getIdOfActive() -> String {
+        for b in bolts {
+            if b.isActive {
+                return String(b.indexId!)
+            }
+        }
+        return "ERROR: No return"
+    }
+    
+    func getTextOfActive() -> String {
+        for b in bolts {
+            if b.isActive {
+                return String(b.textToDisplay)
+            }
+        }
+        return "ERROR: No return"
+    }
+    
+    func resetTextOfActive() {
+        for b in bolts {
+            if b.isActive {
+                b.textToDisplay = ""
+            }
+        }
+    }
+    
+    func greenTheActive()  {
+        for b in bolts {
+            if b.isActive {
+                b.makePanelGreen()
+            }
+        }
+    }
+    
     func changeActives() {
         for b in bolts {
             b.changeActiveStatus()

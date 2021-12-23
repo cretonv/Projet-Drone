@@ -28,6 +28,45 @@ class ViewController: UIViewController {
         SocketIOManager.instance.setup()
         SocketIOManager.instance.connect {
             print("Connecté")
+            
+            SocketIOManager.instance.listenToChannel(channel: "button_event") { str in
+                print("Button event from server: \(str)")
+                
+                let parsingData = str?.components(separatedBy: ":")
+                
+                let buttonId = parsingData?[0]
+                let buttonType = parsingData?[1]
+                
+                if let id = buttonId {
+                    if (id == SharedToyBox.instance.getIdOfActive()) {
+
+                        var user: String = ""
+                        var message: String = ""
+                        
+                        user = "user-\(SharedToyBox.instance.getIdOfActive())"
+                        message = SharedToyBox.instance.getTextOfActive()
+                        
+                        if let type = buttonType {
+                            switch type {
+                            case "submit":
+                                self.sendMessage(message: "\(user) : \(message)")
+                                
+                                SharedToyBox.instance.resetTextOfActive()
+                                SharedToyBox.instance.greenTheActive()
+                                
+                            case "delete":
+                                SharedToyBox.instance.resetTextOfActive()
+                                // TODO: Display the information on the sphero
+                                
+                            default:
+                                break
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
         }
         
         SharedToyBox.instance.setActives()
@@ -67,12 +106,11 @@ class ViewController: UIViewController {
                                             } else if(self.tapSum == 5) {
                                                 bolt.textToDisplay += "5"
                                             } else if(self.tapSum == 10) {
-                                                SocketIOManager.instance.writeValue("user-\(bolt.indexId!) : \(bolt.textToDisplay)", toChannel: "send_message") {
-                                                    print("Message envoyé")
-                                                }
+                                                self.sendMessage(message: "user-\(bolt.indexId!) : \(bolt.textToDisplay)")
+                                                
+                                                // TODO: Refacto
                                                 bolt.textToDisplay = ""
                                                 bolt.makePanelGreen()
-                                                SharedToyBox.instance.changeActives()
                                             } else {
                                                 bolt.textToDisplay += String(self.tapSum)
                                             }
@@ -102,10 +140,20 @@ class ViewController: UIViewController {
         isRecording = true
     }
     
+    
     @IBAction func sendMessage(_ sender: Any) {
-        SocketIOManager.instance.writeValue("Test message", toChannel: "send_message") {
-            print("user-1 : Message from sphero 1")
+        SocketIOManager.instance.writeValue("message", toChannel: "send_message") {
+            print("Message: message sended")
         }
+    }
+    
+    
+    func sendMessage(message: String) {
+        SocketIOManager.instance.writeValue(message, toChannel: "send_message") {
+            print("Message: \(message) sended")
+        }
+        
+        SharedToyBox.instance.changeActives()
     }
 }
 
