@@ -74,6 +74,26 @@ class SharedToyBox {
         for b in bolts {
             if b.isActive {
                 b.makePanelGreen()
+            } else {
+                b.makePanelRed()
+            }
+        }
+    }
+    
+    func redTheActive()  {
+        for b in bolts {
+            if b.isActive {
+                b.makePanelRed()
+            } else {
+                b.makePanelGreen()
+            }
+        }
+    }
+    
+    func dipsplayCrossOnActive() {
+        for b in bolts {
+            if b.isActive {
+                b.displayCross(color: .red)
             }
         }
     }

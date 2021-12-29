@@ -134,6 +134,25 @@ class BoltToy: SpheroV2Toy {
         self.drawMatrix(pixel: Pixel(x: 6, y: 6), color: color)
     }
     
+    func displayCross(color: UIColor) {
+        self.drawMatrixLine(from: Pixel(x:0, y: 0), to: Pixel(x:0, y: 1), color: color)
+        self.drawMatrixLine(from: Pixel(x:0, y: 6), to: Pixel(x:0, y: 7), color: color)
+        self.drawMatrixLine(from: Pixel(x:1, y: 0), to: Pixel(x:1, y: 2), color: color)
+        self.drawMatrixLine(from: Pixel(x:1, y: 5), to: Pixel(x:1, y: 7), color: color)
+        
+        self.drawMatrixLine(from: Pixel(x:2, y: 1), to: Pixel(x:2, y: 6), color: color)
+        
+        self.drawMatrixLine(from: Pixel(x:3, y: 2), to: Pixel(x:3, y: 5), color: color)
+        self.drawMatrixLine(from: Pixel(x:4, y: 2), to: Pixel(x:4, y: 5), color: color)
+        
+        self.drawMatrixLine(from: Pixel(x:5, y: 1), to: Pixel(x:5, y: 6), color: color)
+        
+        self.drawMatrixLine(from: Pixel(x:6, y: 0), to: Pixel(x:6, y: 2), color: color)
+        self.drawMatrixLine(from: Pixel(x:6, y: 5), to: Pixel(x:6, y: 7), color: color)
+        self.drawMatrixLine(from: Pixel(x:7, y: 0), to: Pixel(x:7, y: 1), color: color)
+        self.drawMatrixLine(from: Pixel(x:7, y: 6), to: Pixel(x:7, y: 7), color: color)
+    }
+    
     override func startAiming() {
         core.send(SetBoltLEDCommand(ledMask: BoltLEDMask.back, color: .blue))
     }

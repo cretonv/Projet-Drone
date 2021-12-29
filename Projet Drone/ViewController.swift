@@ -50,14 +50,14 @@ class ViewController: UIViewController {
                             switch type {
                             case "submit":
                                 self.sendMessage(message: "\(user) : \(message)")
-                                
+                                SharedToyBox.instance.redTheActive()
                                 SharedToyBox.instance.resetTextOfActive()
                                 SharedToyBox.instance.greenTheActive()
                                 
                             case "delete":
                                 SharedToyBox.instance.resetTextOfActive()
                                 // TODO: Display the information on the sphero
-                                
+                                SharedToyBox.instance.dipsplayCrossOnActive()
                                 
                             default:
                                 break
