@@ -749,7 +749,8 @@ public struct SetMatrixScrollingText: UserIOCommand {
     public let loop: UInt8
     public let text: String
     
-    public init(text: String, color: UIColor, speed: UInt8, loop: UInt8) {
+    public init(text: String, color: UIColor, speed: UInt8, loop: UInt8
+    ) {
         self.text = text
         self.color = color
         self.speed = speed
@@ -770,6 +771,33 @@ public struct SetMatrixScrollingText: UserIOCommand {
         if let textBytes = text.nullTerminated {
             bytes.append(contentsOf: textBytes)
         }
+        
+        return Data(bytes: bytes)
+    }
+}
+
+public struct SetMatrixText: UserIOCommand {
+    public let commandId: UInt8 = UserIOCommandIds.matrixScrollText.rawValue
+    public let targetId: UInt8? = 0x12
+    public let color: UIColor
+    public let text: String
+    
+    public init(text: String, color: UIColor) {
+        self.text = text
+        self.color = color
+    }
+    
+    public var payload: Data? {
+        var bytes = [UInt8]()
+        
+        if let textBytes = text.nullTerminated {
+            bytes.append(contentsOf: textBytes)
+        }
+        
+        let rgb = color.rgbValues()
+        bytes.append(UInt8(rgb.r * 255))
+        bytes.append(UInt8(rgb.g * 255))
+        bytes.append(UInt8(rgb.b * 255))
         
         return Data(bytes: bytes)
     }

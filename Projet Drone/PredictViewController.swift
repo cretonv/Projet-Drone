@@ -117,7 +117,7 @@ class PredictViewController: UIViewController {
                             print(prediction!)
                             
                             var str = "Je pense que c'est un "
-                            switch recognizedClass {
+                            /*switch recognizedClass {
                             case .Carre:
                                 str = str+"carré!"
                                 SharedToyBox.instance.bolt?.scrollMatrix(text: "D", color: .green, speed: 3, loop: .noLoop)
@@ -142,7 +142,7 @@ class PredictViewController: UIViewController {
                                 self.delay(5) {
                                     SharedToyBox.instance.bolt?.displayArrow(color: .red)
                                 }
-                            }
+                            }*/
                             self.resultLabel.text = str
                             
                             SharedToyBox.instance.bolt?.displayArrow(color: .red)

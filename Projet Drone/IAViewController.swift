@@ -43,20 +43,33 @@ class IAViewController: UIViewController {
         SocketIOManager.instance.setRoom()
         SocketIOManager.instance.connect {
             print("Connecté")
+            
             SocketIOManager.instance.listenToChannel(channel: "start_detection") { str in
                 print("Received \(str)")
-                SharedToyBox.instance.bolt?.displayArrow(color: .green)
+                // SharedToyBox.instance.bolt?.clearMatrix()
+                // SharedToyBox.instance.bolt?.displayArrow(color: .green)
 
-                self.delay(2) {
+                self.delay(3) {
                     print("GOOOOOOOOOOOOOOOOOOOOOOOO")
                     if(!self.isPredicting && str == SharedToyBox.instance.bolt?.boltNum) {
                         currentAccData = []
                         currentGyroData = []
+                        SharedToyBox.instance.bolt?.clearMatrix()
                         SharedToyBox.instance.bolt?.displayArrow(color: .green)
                         self.isPredicting = true
                         
                     }
                 }
+                self.delay(2) {
+                    SharedToyBox.instance.bolt?.clearMatrix()
+                    SharedToyBox.instance.bolt?.displayOne(color: .red)
+                }
+                self.delay(1) {
+                    SharedToyBox.instance.bolt?.clearMatrix()
+                    SharedToyBox.instance.bolt?.displayTwo(color: .red)
+                }
+                SharedToyBox.instance.bolt?.clearMatrix()
+                SharedToyBox.instance.bolt?.displayThree(color: .red)
             }
         }
 
@@ -129,16 +142,32 @@ class IAViewController: UIViewController {
                             switch recognizedClass {
                             case .Carre:
                                 str = str+"carré!"
-                                SharedToyBox.instance.bolt?.scrollMatrix(text: "D", color: .green, speed: 3, loop: .noLoop)
+                                SharedToyBox.instance.bolt?.scrollMatrix(text: "D", color: .green, speed: 6, loop: .loopForever)
+                                self.delay(10) {
+                                    SharedToyBox.instance.bolt?.clearMatrix()
+                                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                                }
                             case .Lune:
                                 str = str+"lune!"
-                                SharedToyBox.instance.bolt?.scrollMatrix(text: "I", color: .green, speed: 3, loop: .noLoop)
+                                SharedToyBox.instance.bolt?.scrollMatrix(text: "I", color: .green, speed: 6, loop: .loopForever)
+                                self.delay(10) {
+                                    SharedToyBox.instance.bolt?.clearMatrix()
+                                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                                }
                             case .Vague:
                                 str = str+"vague!"
-                                SharedToyBox.instance.bolt?.scrollMatrix(text: "E", color: .green, speed: 3, loop: .noLoop)
+                                SharedToyBox.instance.bolt?.scrollMatrix(text: "E", color: .green, speed: 6, loop: .loopForever)
+                                self.delay(10) {
+                                    SharedToyBox.instance.bolt?.clearMatrix()
+                                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                                }
                             case .Triangle:
                                 str = str+"triangle!"
-                                SharedToyBox.instance.bolt?.scrollMatrix(text: "A", color: .green, speed: 3, loop: .noLoop)
+                                SharedToyBox.instance.bolt?.scrollMatrix(text: "A", color: .green, speed: 6, loop: .loopForever)
+                                self.delay(10) {
+                                    SharedToyBox.instance.bolt?.clearMatrix()
+                                    SharedToyBox.instance.bolt?.displayArrow(color: .red)
+                                }
                             }
                             let utterance = AVSpeechUtterance(string: str)
                             utterance.voice = AVSpeechSynthesisVoice(language: "fr-Fr")

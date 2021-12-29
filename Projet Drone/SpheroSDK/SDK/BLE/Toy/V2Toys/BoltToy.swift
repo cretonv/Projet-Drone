@@ -93,6 +93,47 @@ class BoltToy: SpheroV2Toy {
         self.setFrontLed(color: color)
     }
     
+    func displayOne(color: UIColor) {
+        self.drawMatrixLine(from: Pixel(x: 6, y: 3), to: Pixel(x: 6, y: 4), color: color)
+        self.drawMatrixLine(from: Pixel(x: 5, y: 2), to: Pixel(x: 5, y: 3), color: color)
+        self.drawMatrixLine(from: Pixel(x: 4, y: 1), to: Pixel(x: 4, y: 2), color: color)
+        self.drawMatrixLine(from: Pixel(x: 3, y: 0), to: Pixel(x: 3, y: 7), color: color)
+        self.drawMatrixLine(from: Pixel(x: 2, y: 0), to: Pixel(x: 2, y: 7), color: color)
+    }
+    
+    func displayTwo(color: UIColor) {
+        self.drawMatrixLine(from: Pixel(x: 1, y:1), to: Pixel(x: 1, y: 2), color: color)
+        self.drawMatrixLine(from: Pixel(x: 1, y:6), to: Pixel(x: 1, y: 7), color: color)
+        self.drawMatrixLine(from: Pixel(x: 2, y: 0), to: Pixel(x: 2, y: 4), color: color)
+        self.drawMatrixLine(from: Pixel(x: 2, y: 6), to: Pixel(x: 2, y: 7), color: color)
+        self.drawMatrix(pixel: Pixel(x: 3, y: 0), color: color)
+        self.drawMatrix(pixel: Pixel(x: 3, y: 4), color: color)
+        self.drawMatrix(pixel: Pixel(x: 3, y: 7), color: color)
+        self.drawMatrix(pixel: Pixel(x: 4, y: 0), color: color)
+        self.drawMatrixLine(from: Pixel(x: 4, y: 4), to: Pixel(x: 4, y: 5), color: color)
+        self.drawMatrix(pixel: Pixel(x: 4, y: 7), color: color)
+        self.drawMatrixLine(from: Pixel(x: 5, y: 0), to: Pixel(x: 5, y: 1), color: color)
+        self.drawMatrixLine(from: Pixel(x: 5, y: 5), to: Pixel(x: 5, y: 7), color: color)
+        self.drawMatrix(pixel: Pixel(x: 6, y: 1), color: color)
+        self.drawMatrixLine(from: Pixel(x: 6, y: 6), to: Pixel(x: 6, y: 7), color: color)
+    }
+    
+    func displayThree(color: UIColor) {
+        self.drawMatrixLine(from: Pixel(x: 1, y:2), to: Pixel(x: 1, y: 3), color: color)
+        self.drawMatrixLine(from: Pixel(x: 1, y:5), to: Pixel(x: 1, y: 6), color: color)
+        self.drawMatrixLine(from: Pixel(x: 2, y: 1), to: Pixel(x: 2, y: 7), color: color)
+        self.drawMatrix(pixel: Pixel(x: 3, y: 1), color: color)
+        self.drawMatrix(pixel: Pixel(x: 3, y: 4), color: color)
+        self.drawMatrix(pixel: Pixel(x: 3, y: 7), color: color)
+        self.drawMatrix(pixel: Pixel(x: 4, y: 1), color: color)
+        self.drawMatrix(pixel: Pixel(x: 4, y: 4), color: color)
+        self.drawMatrix(pixel: Pixel(x: 4, y: 7), color: color)
+        self.drawMatrixLine(from: Pixel(x: 5, y: 1), to: Pixel(x: 5, y: 2), color: color)
+        self.drawMatrixLine(from: Pixel(x: 5, y: 6), to: Pixel(x: 5, y: 7), color: color)
+        self.drawMatrix(pixel: Pixel(x: 6, y: 2), color: color)
+        self.drawMatrix(pixel: Pixel(x: 6, y: 6), color: color)
+    }
+    
     override func startAiming() {
         core.send(SetBoltLEDCommand(ledMask: BoltLEDMask.back, color: .blue))
     }
@@ -145,6 +186,12 @@ class BoltToy: SpheroV2Toy {
     func scrollMatrix(text: String, color: UIColor, speed: Int, loop: ScrollingTextLoopMode) {
         let slicedString = String(text.prefix(maxScrollingTextLength))
         core.send(SetMatrixScrollingText(text: slicedString, color: color, speed: UInt8((0...maxScrollingTextSpeed).clamp(speed)), loop: loop.rawValue))
+        self.lightGoodLed()
+    }
+    
+    func setMatrixText(text: String, color: UIColor) {
+        let slicedString = String(text.prefix(maxScrollingTextLength))
+        core.send(SetMatrixText(text: slicedString, color: color))
         self.lightGoodLed()
     }
 }

@@ -58,6 +58,7 @@ class ViewController: UIViewController {
                                 SharedToyBox.instance.resetTextOfActive()
                                 // TODO: Display the information on the sphero
                                 
+                                
                             default:
                                 break
                             }
