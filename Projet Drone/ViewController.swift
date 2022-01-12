@@ -58,7 +58,6 @@ class ViewController: UIViewController {
                                 SharedToyBox.instance.resetTextOfActive()
                                 // TODO: Display the information on the sphero
                                 SharedToyBox.instance.dipsplayCrossOnActive()
-                                
                             default:
                                 break
                             }

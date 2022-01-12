@@ -110,8 +110,8 @@
             filePath = "Projet Drone/IAViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,10 +126,58 @@
             filePath = "Projet Drone/IAViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E8608679-0FA0-443D-BE02-11DF75813A63"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Projet Drone/IAViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E8608679-0FA0-443D-BE02-11DF75813A63 - fce3fe1c2e23e2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 (Projet_Drone.SensorControlData) -&gt; () in Projet_Drone.IAViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Projet Drone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentcreton/Desktop/Projet%20Drone/Projet%20Drone/IAViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "8092">
+               </Location>
+               <Location
+                  uuid = "E8608679-0FA0-443D-BE02-11DF75813A63 - fce3fe1c2e23e2f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #2 (Projet_Drone.SensorControlData) -&gt; () in Projet_Drone.IAViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "Projet Drone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentcreton/Desktop/Projet%20Drone/Projet%20Drone/IAViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "134"
+                  endingLineNumber = "134"
+                  offsetFromSymbolStart = "8192">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

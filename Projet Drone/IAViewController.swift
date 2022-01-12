@@ -49,27 +49,26 @@ class IAViewController: UIViewController {
                 // SharedToyBox.instance.bolt?.clearMatrix()
                 // SharedToyBox.instance.bolt?.displayArrow(color: .green)
 
-                self.delay(3) {
-                    print("GOOOOOOOOOOOOOOOOOOOOOOOO")
-                    if(!self.isPredicting && str == SharedToyBox.instance.bolt?.boltNum) {
+                if(!self.isPredicting && str == SharedToyBox.instance.bolt?.boltNum) {
+                    self.delay(3) {
+                        print("GOOOOOOOOOOOOOOOOOOOOOOOO")
                         currentAccData = []
                         currentGyroData = []
                         SharedToyBox.instance.bolt?.clearMatrix()
                         SharedToyBox.instance.bolt?.displayArrow(color: .green)
                         self.isPredicting = true
-                        
                     }
-                }
-                self.delay(2) {
+                    self.delay(2) {
+                        SharedToyBox.instance.bolt?.clearMatrix()
+                        SharedToyBox.instance.bolt?.displayOne(color: .red)
+                    }
+                    self.delay(1) {
+                        SharedToyBox.instance.bolt?.clearMatrix()
+                        SharedToyBox.instance.bolt?.displayTwo(color: .red)
+                    }
                     SharedToyBox.instance.bolt?.clearMatrix()
-                    SharedToyBox.instance.bolt?.displayOne(color: .red)
+                    SharedToyBox.instance.bolt?.displayThree(color: .red)
                 }
-                self.delay(1) {
-                    SharedToyBox.instance.bolt?.clearMatrix()
-                    SharedToyBox.instance.bolt?.displayTwo(color: .red)
-                }
-                SharedToyBox.instance.bolt?.clearMatrix()
-                SharedToyBox.instance.bolt?.displayThree(color: .red)
             }
         }
 

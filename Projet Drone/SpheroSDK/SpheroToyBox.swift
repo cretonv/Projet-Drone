@@ -94,6 +94,9 @@ class SharedToyBox {
         for b in bolts {
             if b.isActive {
                 b.displayCross(color: .red)
+                delay(2) {
+                    b.clearMatrix()
+                }
             }
         }
     }
@@ -121,6 +124,12 @@ class SharedToyBox {
     
     func stopScan() {
         box.stopScan()
+    }
+    
+    func delay(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
     }
     
 }
